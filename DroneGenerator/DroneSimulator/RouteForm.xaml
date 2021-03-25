@@ -1,0 +1,18 @@
+﻿<Window x:Class="DroneSimulator.RouteForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="RouteForm" Height="280" Width="630" Closed="CloseWindow">
+    <Grid>
+
+        <Label Content="Choose the parameters of the operations." HorizontalAlignment="Left" Margin="158,28,0,0" VerticalAlignment="Top" Height="26" Width="230"/>
+        <RadioButton x:Name="default_parameters_radioButton" Content="Insert Parameters with an XML file" HorizontalAlignment="Left" Margin="40,75,0,0" VerticalAlignment="Top" Click="default_parameters_radioButton_Click" IsChecked="True" Height="16" Width="203"/>
+        <RadioButton x:Name="select_parameters_radioButton" Content="Select Parameters" HorizontalAlignment="Left" Margin="40,102,0,0" VerticalAlignment="Top" Click="select_parameters_radioButton_Click" Height="16" Width="140"/>
+        <Button x:Name="selectparameters_button" Content="Select Parameters" HorizontalAlignment="Left" Margin="263,102,0,0" VerticalAlignment="Top" Width="104" IsEnabled="False" Click="selectparameters_button_Click" Height="22" />
+        <Button Content="Next" HorizontalAlignment="Left" Margin="503,167,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2" Height="22"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="83,167,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click" Height="22"/>
+        <Button x:Name="Examine_button" Content="Examine" HorizontalAlignment="Left" Margin="263,72,0,0" VerticalAlignment="Top" Width="104" Height="22" Click="Button_Click_1"/>
+        <Label Content="File loaded:" HorizontalAlignment="Left" Margin="392,71,0,0" VerticalAlignment="Top" Height="26" Width="75"/>
+        <Label x:Name="file_name" Content="None" HorizontalAlignment="Left" Margin="467,70,0,0" VerticalAlignment="Top"/>
+
+    </Grid>
+</Window>

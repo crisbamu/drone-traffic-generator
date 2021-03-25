@@ -1,0 +1,23 @@
+﻿<Window x:Class="DroneSimulator.DownloadForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DroneSimulator"
+        mc:Ignorable="d"
+        Title="DownloadForm" Height="350" Width="650">
+    <Grid>
+        <Label x:Name="label" Content="The generation has properly finished. Please, choose the folders to store the following files" HorizontalAlignment="Left" Margin="36,39,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label1" Content="KML file:" HorizontalAlignment="Left" Margin="70,123,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label2" Content="MavLink files" HorizontalAlignment="Left" Margin="70,154,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="label4" Content="CSV file" HorizontalAlignment="Left" Margin="70,192,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button" Content="Download" HorizontalAlignment="Left" Margin="230,123,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
+        <Button x:Name="button_Copy" Content="Download" HorizontalAlignment="Left" Margin="230,157,0,0" VerticalAlignment="Top" Width="75" Click="button_Copy_Click"/>
+        <Button x:Name="button_Copy2" Content="Download" HorizontalAlignment="Left" Margin="230,194,0,0" VerticalAlignment="Top" Width="75" Click="button_Copy2_Click"/>
+        <Label x:Name="label5" Content="Number of TXT files:" HorizontalAlignment="Left" Margin="352,154,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="fragment_textbox" HorizontalAlignment="Left" Height="23" Margin="475,157,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="49"/>
+        <Label x:Name="label6" Content="" HorizontalAlignment="Left" Margin="546,157,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="button1" Content="Close" HorizontalAlignment="Left" Margin="450,270,0,0" VerticalAlignment="Top" Width="74" Click="button1_Click"/>
+
+    </Grid>
+</Window>

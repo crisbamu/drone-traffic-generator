@@ -1,0 +1,11 @@
+﻿<Window x:Class="DroneSimulator.QuestionForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="QuestionForm" Height="241" Width="422">
+    <Grid>
+        <Label Content="The simulator has work out the results.&#xD;&#xA;Do you want to see the results in Google Earth?" HorizontalAlignment="Left" Margin="76,33,0,0" VerticalAlignment="Top" Width="271" Height="56"/>
+        <Button Content="Yes" HorizontalAlignment="Left" Margin="67,129,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Button Content="No" HorizontalAlignment="Left" Margin="293,129,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>

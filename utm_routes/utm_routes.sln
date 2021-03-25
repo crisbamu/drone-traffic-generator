@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utm_routes", "utm_routes\utm_routes.csproj", "{CFA8D1EB-F041-44FD-B291-F1B643249147}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utm_country", "..\utm_country\utm_country\utm_country.csproj", "{597282AE-29EB-4585-96FD-8157F8B9962A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utm_drone", "..\utm_drone\utm_drone\utm_drone.csproj", "{7B173D93-585E-48AF-B486-02AF4CFCAEF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "utm_utils", "..\utm_utils\utm_utils\utm_utils.csproj", "{AAC8BA2B-9FC7-4618-B379-62A67F77305D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GIS", "..\gis\GIS\GIS.csproj", "{BBA9A227-A3F2-4B36-8D65-E03192AA4C8C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CFA8D1EB-F041-44FD-B291-F1B643249147}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFA8D1EB-F041-44FD-B291-F1B643249147}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFA8D1EB-F041-44FD-B291-F1B643249147}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFA8D1EB-F041-44FD-B291-F1B643249147}.Release|Any CPU.Build.0 = Release|Any CPU
+		{597282AE-29EB-4585-96FD-8157F8B9962A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{597282AE-29EB-4585-96FD-8157F8B9962A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{597282AE-29EB-4585-96FD-8157F8B9962A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{597282AE-29EB-4585-96FD-8157F8B9962A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B173D93-585E-48AF-B486-02AF4CFCAEF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B173D93-585E-48AF-B486-02AF4CFCAEF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B173D93-585E-48AF-B486-02AF4CFCAEF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B173D93-585E-48AF-B486-02AF4CFCAEF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC8BA2B-9FC7-4618-B379-62A67F77305D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC8BA2B-9FC7-4618-B379-62A67F77305D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC8BA2B-9FC7-4618-B379-62A67F77305D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC8BA2B-9FC7-4618-B379-62A67F77305D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBA9A227-A3F2-4B36-8D65-E03192AA4C8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBA9A227-A3F2-4B36-8D65-E03192AA4C8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBA9A227-A3F2-4B36-8D65-E03192AA4C8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBA9A227-A3F2-4B36-8D65-E03192AA4C8C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

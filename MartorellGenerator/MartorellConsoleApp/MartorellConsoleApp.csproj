@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1CD2DA75-D775-46EC-8A81-43050FE2789F}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MartorellConsoleApp</RootNamespace>
+    <AssemblyName>MartorellConsoleApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\DroneGenerator\utm_analysis\utm_analysis.csproj">
+      <Project>{73ad3346-96ca-41c0-a91e-b995cd43ee13}</Project>
+      <Name>utm_analysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utm_country\utm_country\utm_country.csproj">
+      <Project>{597282ae-29eb-4585-96fd-8157f8b9962a}</Project>
+      <Name>utm_country</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utm_drone\utm_drone\utm_drone.csproj">
+      <Project>{7b173d93-585e-48af-b486-02af4cfcaef5}</Project>
+      <Name>utm_drone</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utm_operation\utm_operation\utm_operation.csproj">
+      <Project>{d24e8523-04ed-4629-a0f8-20348517e849}</Project>
+      <Name>utm_operation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utm_operator\utm_operator\utm_operator.csproj">
+      <Project>{8553de34-ed89-4117-9f8c-b1a7b4426697}</Project>
+      <Name>utm_operator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utm_routes\utm_routes\utm_routes.csproj">
+      <Project>{cfa8d1eb-f041-44fd-b291-f1b643249147}</Project>
+      <Name>utm_routes</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\utm_utils\utm_utils\utm_utils.csproj">
+      <Project>{aac8ba2b-9fc7-4618-b379-62a67f77305d}</Project>
+      <Name>utm_utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

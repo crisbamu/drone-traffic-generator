@@ -1,0 +1,1 @@
+In the "bin" folder, there are the many xml files which contain the information loaded in the ADDG programme. 

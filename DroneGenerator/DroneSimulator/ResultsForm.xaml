@@ -1,0 +1,103 @@
+﻿<Window x:Class="DroneSimulator.ResultsForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="ResultsForm" Height="330" Width="700" Closed="CloseWindow">
+    <Window.Resources>
+        <ResourceDictionary Source="StyleResources.xaml"/>
+    </Window.Resources>
+    <TabControl x:Name="tabControl" HorizontalAlignment="Left" VerticalAlignment="Top" Height="300" Width="692" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,-1">
+        <TabControl.RenderTransform>
+            <TransformGroup>
+                <ScaleTransform/>
+                <SkewTransform AngleY="-0.311"/>
+                <RotateTransform/>
+                <TranslateTransform Y="-1.495"/>
+            </TransformGroup>
+        </TabControl.RenderTransform>
+        <TabItem Header="Results">
+
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="350" Margin="150,0,20,0" Content="In this window, the conflicts and busy can be worked out."/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="350" Margin="60,20,20,0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <Button x:Name="visualization_button"  Width="250" Height="25" Margin="30,0,20,0" Content="Visualize the generation in Google Earth" Click="Visualization_Click"/>
+
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="350" Margin="60,20,20,0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <Button x:Name="find_conflict_buttons"  Width="100" Height="25" Margin="30,0,20,0" Content="Find Conflicts" Click="find_conflict_buttons_Click"/>
+                    <Label  Width="130" Margin="30,0,10,0" Content="Number of conflicts:" />
+                    <Label x:Name="conflict_label" Width="39" Margin="0,0,10,0" Content="N/D"/>
+                    <Label x:Name="loading_conflicts_label" Content="" Margin="0,0,10,0"/>
+                    <Button x:Name="see_conflict_buttons"  Width="100" Height="24" Margin="0,0,20,0" Content="See Conflicts" IsEnabled="False" Visibility="Visible" Click="see_conflict_buttons_Click"/>
+                    <Button x:Name="save_conflict_buttons"  Width="100" Height="25" Margin="0,0,20,0" Content="Save Conflicts" IsEnabled="False" Visibility="Visible" Click="save_conflict_buttons_Click"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="350" Margin="60,10,20,0" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Button x:Name="find_busy_areas_button"  Width="100" Height="25" Margin="30,0,20,0" Content="Find Busy Areas" Click="find_busy_areas_button_Click"/>
+                    <Label  Width="130" Margin="30,0,10,0" Content="Number of busy areas:" />
+                    <Label x:Name="busy_label" Width="39" Margin="0,0,10,0" Content="N/D"/>
+                    <Label x:Name="loading_areas_label" Content="" Margin="0,0,10,0"/>
+                    <Button x:Name="see_busy_areas_buttons"  Width="100" Height="25" Margin="0,0,20,0" Content="See Busy Areas" IsEnabled="False" Visibility="Visible" Click="see_busy_areas_buttons_Click"/>
+                    <Button x:Name="save_busy_areas_buttons"  Width="100" Height="25" Margin="0,0,20,0" Content="Save Busy Areas" IsEnabled="False" Visibility="Visible" Click="save_busy_areas_buttons_Click"/>
+                </StackPanel>
+
+
+            </StackPanel>
+        </TabItem>
+        <TabItem Header="Statistics">
+            <StackPanel Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <Label Width="350" Margin="150,0,20,0" Content="In this window, the statistics are shown below."/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal">
+                    <Label  Content="Mean Distance (meters)"  Margin="150,0,20,0" />
+                    <Label Content="Mean Time (minutes)" Margin="10,0,0,0"/>
+                    <Label Content="Number of Operations" Margin="10,0,0,0"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label Width="110"  Content="VLOS Operations:" HorizontalAlignment="Left" Margin="30,0,0,0" VerticalAlignment="Top"/>
+                    <Label x:Name="vlosmeandistance_textblock" Width="70" Background="White" Margin="40,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                    <Label x:Name="vlosmeantime_textblock" Width="70" Background="White" Margin="90,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                    <Label x:Name="vlosoperations_textblock"  Width="70" Background="White" Margin="70,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label Width="110"  Margin="30,0,0,0" Content="EVLOS Operations" />
+                    <Label x:Name="evlosmeandistance_textblock" Width="70" Background="White" Margin="40,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                    <Label x:Name="evlosmeantime_textblock" Width="70" Background="White" Margin="90,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                    <Label x:Name="evlosoperations_textblock" Width="70" Background="White" Margin="70,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,10">
+                    <Label  Width="110" Margin="30,0,0,0" Content="BVLOS Operations" />
+                    <Label x:Name="bvlosmeandistance_textblock" Width="70" Background="White" Margin="40,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                    <Label x:Name="bvlosmeantime_textblock" Width="70" Background="White" Margin="90,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                    <Label x:Name="bvlosoperations_textblock" Width="70" Background="White" Margin="70,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <Label  Width="110" Margin="30,0,0,0" Content="Delivery Operations" />
+                    <Label x:Name="deliverymeandistance_textblock" Width="70" Background="White" Margin="40,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                    <Label x:Name="deliverymeantime_textblock" Width="70" Background="White" Margin="90,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                    <Label x:Name="deliveryoperations_textblock" Width="70" Background="White" Margin="70,0,0,0" BorderThickness="1" BorderBrush="Black"/>
+                </StackPanel>
+                <StackPanel>
+                    <Label Height="25"/>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" >
+                    <Button Width="110" Margin="150,0,0,0" Content="Export to CSV" Height="25" Click="Button_Click"/>
+                    <Button Width="110" Margin="100,0,0,0" Content="Export to XML" Click="Button_Click_1"/>
+                </StackPanel>
+
+
+            </StackPanel>
+        </TabItem>
+    </TabControl>
+
+</Window>

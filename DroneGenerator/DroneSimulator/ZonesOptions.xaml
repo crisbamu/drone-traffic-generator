@@ -1,0 +1,19 @@
+﻿<Window x:Class="DroneSimulator.ZonesOptions"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DroneSimulator"
+        mc:Ignorable="d"
+        Title="ZonesOptions" Height="300" Width="300">
+    <Grid>
+        <CheckBox x:Name="Forbidden_flight_areas" Content="Forbidden flight areas" HorizontalAlignment="Left" Margin="42,82,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="controlled_airspace" Content="Controlled Airspace" HorizontalAlignment="Left" Margin="42,102,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Cities" Content="Cities" HorizontalAlignment="Left" Margin="42,122,0,0" VerticalAlignment="Top"/>
+        <CheckBox x:Name="Airports" Content="Airports, aerodroms and heliports" HorizontalAlignment="Left" Margin="42,142,0,0" VerticalAlignment="Top"/>
+        <Button x:Name="Apply_button" Content="Apply" HorizontalAlignment="Left" Margin="198,217,0,0" VerticalAlignment="Top" Width="75" Click="Apply_button_Click"/>
+        <Button x:Name="Cancel_button" Content="Cancel" HorizontalAlignment="Left" Margin="25,217,0,0" VerticalAlignment="Top" Width="75" Click="Cancel_button_Click"/>
+        <Label x:Name="label" Content="Choose which forbidden flight zones &#10; are active for the generation. " HorizontalAlignment="Left" Margin="42,10,0,0" VerticalAlignment="Top" Width="230"/>
+
+    </Grid>
+</Window>

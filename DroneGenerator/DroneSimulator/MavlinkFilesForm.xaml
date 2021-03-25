@@ -1,0 +1,12 @@
+﻿<Window x:Class="DroneSimulator.MavlinkFilesForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MavlinkFilesForm" Height="200" Width="400" Closed="CloseWindow">
+    <Grid>
+        <Label Content="Choose the number of output files" HorizontalAlignment="Left" Margin="32,57,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="fragment_textbox" HorizontalAlignment="Left" Height="23" Margin="245,60,0,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Width="80"/>
+        <Button Content="Start Simulation" HorizontalAlignment="Left" Margin="264,127,0,0" VerticalAlignment="Top" Width="98" Click="Button_Click"/>
+        <Button Content="Cancel" HorizontalAlignment="Left" Margin="32,127,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+
+    </Grid>
+</Window>
