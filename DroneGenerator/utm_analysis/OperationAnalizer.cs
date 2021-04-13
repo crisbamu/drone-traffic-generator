@@ -26,12 +26,18 @@ namespace utm_analysis
         // This class aims at analysing the operations in search of conflicts, busy areas and operation proximity to determined zones
 
         //Attributes
-        public static readonly int MAX_SAFE_DISTANCE = 20; // min distance set to 20 meters in horizontal
-        public static readonly int MAX_SAFE_ALT = 5; // min distance set to 5 meters in vertical
+        public static int MAX_SAFE_DISTANCE = 20; // min distance set to 20 meters in horizontal
+        public static int MAX_SAFE_ALT = 5; // min distance set to 5 meters in vertical
         static OperatorGenerator operator_generator = new OperatorGenerator();
 
 
         // functions
+        public static void SetSafeDistance(float scale)
+        {
+            MAX_SAFE_DISTANCE = Convert.ToInt32(MAX_SAFE_DISTANCE * scale);
+            MAX_SAFE_ALT = Convert.ToInt32(MAX_SAFE_ALT * scale);
+            Console.WriteLine("Conflict Distance Volume is {0} m radius and {1} m altidude", MAX_SAFE_DISTANCE, MAX_SAFE_ALT);
+        }
 
         // this function works out the minimum distance between two operations by using the Haversine algorithm.
         public static double FindMinimumDistanceBetweenOperations(Operation a, Operation b)
@@ -575,39 +581,27 @@ namespace utm_analysis
         }
 
         // Whats the differences with the function in AnalysisWriter???=> Use that, not this one!!
-        public static void WriteKMLConflicts(List<Conflict> list, string filename)
+        public static void WriteConflicts(List<Conflict> list, string filename)
         {
-            // XmlWriterSettings settings = new XmlWriterSettings();
-            //settings.Indent = true;
-            //settings.NewLineOnAttributes = true;
+            // out=open(folder+'Conflicts_'+day+'.csv', 'w')
+            // out.write('Time,Lon,Lat,Alt,CPA,flight1,flight2\n')
 
-            //XmlWriter writer = XmlWriter.Create(filename, settings);
-            //writer.WriteStartDocument();
+            StreamWriter writer = new StreamWriter(filename);
 
-            //writer.WriteStartElement("kml", "http://www.opengis.net/kml/2.2");
+            list = list.OrderBy(x => x.GetCpa().GetTime()).ToList();
+            writer.WriteLine("Time,Lon,Lat,Alt,CPA,flight1,flight2");
+            foreach (Conflict punto in list)
+            {
+                string hour = punto.GetCpa().GetTime().Hour.ToString("HH:mm");
+                string time = punto.GetCpa().GetTime().Year + "-" + punto.GetCpa().GetTime().Month.ToString("d2") + "-" + punto.GetCpa().GetTime().Day.ToString("d2") + "T" +
+                    punto.GetCpa().GetTime().Hour.ToString("d2") + ":" + punto.GetCpa().GetTime().Minute.ToString("d2") + ":" + punto.GetCpa().GetTime().Second.ToString("d2") + "Z";
+                writer.Write(time);
 
-            //writer.WriteStartElement("Document"); // start of the element: Document
-            //list = list.OrderBy(x => x.GetCpa().GetTime()).ToList();
-            //foreach(Conflict punto in list)
-            //{
-            //    writer.WriteStartElement("Placemark"); // start of the element: Placemark
-            //    writer.WriteElementString("name", punto.GetOp1().flightId +"-" + punto.GetOp2().flightId);
+                writer.Write(","+punto.GetCpa().GetLongitude() + "," + punto.GetCpa().GetLatitude() + "," + punto.GetCpa().GetAltitude());
 
-            //    writer.WriteStartElement("TimeStamp"); // start of the element: TimeStamp
-            //    string hour = punto.GetCpa().GetTime().Hour.ToString("HH:mm");
-            //    string time = punto.GetCpa().GetTime().Year + "-" + punto.GetCpa().GetTime().Month.ToString("d2") + "-" + punto.GetCpa().GetTime().Day.ToString("d2") + "T" +
-            //        punto.GetCpa().GetTime().Hour.ToString("d2") + ":" + punto.GetCpa().GetTime().Minute.ToString("d2") + ":" + punto.GetCpa().GetTime().Second.ToString("d2") + "Z";
-            //    writer.WriteElementString("when", time);
-            //    writer.WriteEndElement(); //end of the element: TimeStamp
-
-            //    writer.WriteStartElement("Point"); // start of the element: Point
-            //    writer.WriteElementString("coordinates", punto.GetCpa().GetLongitude() + "," + punto.GetCpa().GetLatitude() + "," + punto.GetCpa().GetAltitude());
-            //    writer.WriteEndElement(); // end of the element: Point
-            //    writer.WriteEndElement(); // end of the element: Placemark
-            //}
-            //writer.WriteEndElement(); // end of the element: Document
-            //writer.WriteEndDocument(); // end of the document
-            //writer.Close();
+                writer.Write("," + punto.GetCpaDist() + "," + punto.GetOp1().flightId + "," + punto.GetOp2().flightId+"\n");
+            }
+            writer.Close();
         }
 
         public static List<Operation> FindBusyAreas(List<Operator> operator_list) // find busy areas where several operations are concentrated

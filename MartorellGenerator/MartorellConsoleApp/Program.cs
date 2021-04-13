@@ -51,7 +51,14 @@ namespace MartorellConsoleApp
         private bool cities_airspace = true;
         private bool airports_airspace = true;
 
-        public void MakeSimulation()
+        public void ScaleFleet(float scale)
+        {
+            // This function scales the fleet of all the operators in operator_list
+            foreach (Operator op in operator_list)
+                op.SetNumberOfDrones(Convert.ToInt32(op.GetNumberOfDrones()*scale));
+        }
+
+        public void MakeSimulation(float scale)
         {
             Random rnd = new Random();
             string binaryPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
@@ -70,14 +77,16 @@ namespace MartorellConsoleApp
             upper_limit = country.GetFinalTime();
 
             // operator_list = operator_f1.GetOperatorList();
-            string file_opers = binaryPath + "\\Operators\\Martorell operators.xml";
+            string file_opers = binaryPath + "\\Operators\\Martorell operators delivery.xml";
             if (String.IsNullOrEmpty(file_opers))
             {
                 Console.WriteLine("Error in openning file {0}", file_opers);
                 System.Environment.Exit(1);
             }
             operator_list = new OperatorGenerator().LoadOperators(file_opers);
-
+            if (scale!=1)
+                ScaleFleet(scale);
+            
             //var routesparameters = routes_f1.GetRouteParameters();
             string file_ops = binaryPath + "\\Route_Parameters\\Martorell parameters.xml";
             if (String.IsNullOrEmpty(file_ops))
@@ -102,7 +111,7 @@ namespace MartorellConsoleApp
             //DO generation!!
             operator_generator.LoadOperations(operator_list, drone_type_list, parts, mean_time, devStd, lower_limit, upper_limit, rnd);        }
 
-        public void SaveResults()
+        public void SaveResults(String date)
         {
             TimeSpan initial = lower_limit;
             TimeSpan final = upper_limit;
@@ -113,7 +122,6 @@ namespace MartorellConsoleApp
             x = dist.Item1;
             y = dist.Item2;
 
-            String date = DateTime.Now.ToString("dd-MM-yyyy HHmm");
             string record_name = @"Record " + date + ".xml";
             OperatorWriter.WriteXMLOperators(country, operator_list, "Results", record_name);
 
@@ -138,14 +146,15 @@ namespace MartorellConsoleApp
             operator_list = generation_obtained.Item2;
             Console.WriteLine("ALERT: Generating conflicts as for today");
         }
-        public void AnalyzeConflicts()
+        public void AnalyzeConflicts(float scale, String date)
         {
-            String date = DateTime.Now.ToString("dd-MM-yyyy HHmm");
-            string conflicts = "Results/Conflicts_" + date + ".kml";
+            string conflicts = "Results/Conflicts_" + date;
+            OperationAnalizer.SetSafeDistance(scale);
             List<Conflict> conflict_points = OperationAnalizer.FindTemporalConflicts(operator_list);
-            AnalysisWriter.WriteKMLConflicts(conflict_points, conflicts);
-            AnalysisWriter.WriteJSONConflicts(conflict_points, conflicts);
-            Console.WriteLine("Conflicts have been saved in {0}", conflicts);
+            OperationAnalizer.WriteConflicts(conflict_points, conflicts + ".csv");
+            //AnalysisWriter.WriteKMLConflicts(conflict_points, conflicts + ".kml");
+            //AnalysisWriter.WriteJSONConflicts(conflict_points, conflicts);
+            Console.WriteLine("{1} conflicts saved in {0}", conflicts, conflict_points.LongCount());
         }
         public void ShowStatistics()
         {
@@ -166,8 +175,8 @@ namespace MartorellConsoleApp
 
 
             Console.WriteLine("Mean Distance {0} meters", meandistance);
-            Console.WriteLine("Mean Distance for Security {0} meters", bvlosmeandistance);
-            Console.WriteLine("Mean Distance for Delivery {0} meters", deliverymeandistance);
+            //Console.WriteLine("Mean Distance for Security {0} meters", bvlosmeandistance);
+            //Console.WriteLine("Mean Distance for Delivery {0} meters", deliverymeandistance);
 
             var dams = OperationAnalizer.GetTimeStatistics(operator_list);
             double meaningtime = Math.Round(dams.Item1, 2);
@@ -175,20 +184,24 @@ namespace MartorellConsoleApp
             double deliverymeaningtime = Math.Round(dams.Item5, 2);
 
             Console.WriteLine("Mean Time {0} minutes", meaningtime);
-            Console.WriteLine("Mean Time for Security {0} minutes", bvlosmeaningtime);
-            Console.WriteLine("Mean Time for Delivery {0} minutes", deliverymeaningtime);
+            //Console.WriteLine("Mean Time for Security {0} minutes", bvlosmeaningtime);
+            //Console.WriteLine("Mean Time for Delivery {0} minutes", deliverymeaningtime);
         }
     }
        
     class Program
     {
         static string routes = "";
-        
+        static float traffic_scale = 1;
+        static float distance_scale = 1;
+
         static void usage()
         {
             Console.WriteLine("usage: MartorellConsoleApp.exe <options>");
             Console.WriteLine("The <options> can be:");
             Console.WriteLine("  -h             Print this usage statement");
+            Console.WriteLine("  -t #           Scale traffic by # factor");
+            Console.WriteLine("  -d #           Scale separation distance by # factor");
             Console.WriteLine("  -sim <file>    Use the specified Routesfile");
 
             System.Environment.Exit(0);
@@ -200,6 +213,18 @@ namespace MartorellConsoleApp
             {
                 if (args[i] == "-h")
                     usage();
+                else if (args[i] == "-t")
+                {
+                    Console.WriteLine("...setting traffic scale to {0}", args[i + 1]);
+                    traffic_scale = float.Parse(args[i + 1]);
+                    i++;
+                }
+                else if (args[i] == "-d")
+                {
+                    Console.WriteLine("...setting safe distance scale to {0}", args[i + 1]);
+                    distance_scale = float.Parse(args[i + 1]);
+                    i++;
+                }
                 else if (args[i] == "-sim")
                     if (i == args.Length - 1)
                         usage();
@@ -219,10 +244,11 @@ namespace MartorellConsoleApp
          
         static void Main(string[] args)
         {
+            String simdate = DateTime.Now.ToString("dd-MM-yyyy_HHmm");
+
+            Console.WriteLine("Martorell Industrial Polygon traffic generator");
             if (args.Length == 0)
-                Console.WriteLine("Martorell Industrial Polygon traffic generator.\n....Using default configuration");
-            else if (args[0] == "-h")
-                usage();
+                Console.WriteLine("....Using default configuration");
             else
                 parseCmdLineArgs(args);
 
@@ -230,19 +256,19 @@ namespace MartorellConsoleApp
             if (routes == "")
             {
                 Console.WriteLine("....Starting simulation....");
-                run.MakeSimulation();
+                run.MakeSimulation(traffic_scale);
                 run.ShowStatistics();
-                run.SaveResults();
+                run.SaveResults(simdate);
                 Console.WriteLine("DONE");
             }
             else
             {
                 run.SetSimulation(routes);
-                run.SaveResults(); //TO BE DELETE !!!
+                run.SaveResults(simdate); //TO BE DELETE !!!
             }
 
             Console.WriteLine("....Starting conflict calculation....");
-            run.AnalyzeConflicts();
+            run.AnalyzeConflicts(distance_scale, simdate);
             Console.WriteLine("DONE");
 
 

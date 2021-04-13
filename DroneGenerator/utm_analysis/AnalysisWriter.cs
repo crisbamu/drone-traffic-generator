@@ -213,12 +213,13 @@ namespace utm_analysis
         }
 
         // this function writes all the conflicts inserted by the user to a ste of SJON files.
-        public static void WriteJSONConflicts(List<Conflict> list, string filename)
+        public static void WriteJSONConflicts(List<Conflict> list, string pathString)
         {
             if (list.Count == 0)
                 return;
-            String day = list[0].GetCpa().GetTime().ToString("dd-MM-yyyy");
-            string pathString = @"Results/" + day;
+            //String day = list[0].GetCpa().GetTime().ToString("dd-MM-yyyy");
+            // string pathString = @"Results" + day;
+            //Directory.CreateDirectory(pathString);
             Directory.CreateDirectory(pathString);
 
             // write each conflict as a JSON file
