@@ -20,6 +20,9 @@ namespace MartorellConsoleApp
 {
     class Simulation
     {
+        string dataPath = AppDomain.CurrentDomain.BaseDirectory 
+            + "..\\..\\..\\..\\MartorellData";
+
         Country country;
         // Attributes needed for a simulation 
         List<utm_utils.Point> ConflictPoints = new List<utm_utils.Point>();
@@ -61,10 +64,12 @@ namespace MartorellConsoleApp
         public void MakeSimulation(float scale)
         {
             Random rnd = new Random();
-            string binaryPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+
+            // string binaryPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
+            string binaryPath = dataPath;
 
             // loading Martorell
-            country = CountryGenerator.LoadCountry("Martorell", "contour-v2+alt.xml", "prohibited areas.xml", "airspace-v2.xml", "airports.xml", "cities.xml", "Delivery centers+alt.xml", "delivery forbidden areas.xml", "working hours.xml");
+            country = CountryGenerator.LoadCountry(binaryPath, "Martorell", "contour-v2+alt.xml", "prohibited areas.xml", "airspace-v2.xml", "airports.xml", "cities.xml", "Delivery centers+alt.xml", "delivery forbidden areas.xml", "working hours.xml");
             if (country == null)
             {
                 Console.WriteLine("Check files exits for Martorell in Countries");
@@ -125,11 +130,11 @@ namespace MartorellConsoleApp
             string record_name = @"Record " + date + ".xml";
             OperatorWriter.WriteXMLOperators(country, operator_list, "Results", record_name);
 
-            string fleetofdrones = "Results/fleetofdrones.txt";
+            string fleetofdrones = dataPath + "Results/fleetofdrones.txt";
             OperatorWriter.WriteOperatorsAndDrones(operator_list, fleetofdrones); // write the operators to a .txt file 
-            string timeroute = "Results/Routes_" + date+".kml";
+            string timeroute = dataPath + "Results/Routes_" + date+".kml";
             OperatorWriter.WriteKMLOperations(timeroute, operator_list);
-            timeroute = "Results/Routes_" + date + ".csv";
+            timeroute = dataPath + "Results/Routes_" + date + ".csv";
             OperatorWriter.WriteOperationsCSVs(timeroute, operator_list);
             Console.WriteLine("Routes have been saved in {0}", timeroute);
         }
@@ -148,7 +153,7 @@ namespace MartorellConsoleApp
         }
         public void AnalyzeConflicts(float scale, String date)
         {
-            string conflicts = "Results/Conflicts_" + date;
+            string conflicts = dataPath + "Results/Conflicts_" + date;
             OperationAnalizer.SetSafeDistance(scale);
             List<Conflict> conflict_points = OperationAnalizer.FindTemporalConflicts(operator_list);
             OperationAnalizer.WriteConflicts(conflict_points, conflicts + ".csv");

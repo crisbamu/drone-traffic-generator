@@ -48,6 +48,9 @@ namespace DroneSimulator
 
         // Attributes
 
+        string dataPath = AppDomain.CurrentDomain.BaseDirectory
+            + "..\\..\\..\\..\\DroneData";
+
         List<utm_utils.Point> ConflictPoints = new List<utm_utils.Point>();
         // operators
         int big_operators = 0;
@@ -109,7 +112,7 @@ namespace DroneSimulator
             // loading the country
             if (country_name == CountryItem.Spain )
             {
-                country = CountryGenerator.LoadCountry("Spain", "spanish_contour_2.0.xml", "spanish forbidden areas 2.0.xml", "spanish airspace 2.0.xml", "spanish airports.xml", "spain cities.xml", "Delivery centers.xml", "delivery forbidden areas 2.0.xml", "spanish working hours.xml");
+                country = CountryGenerator.LoadCountry(dataPath, "Spain", "spanish_contour_2.0.xml", "spanish forbidden areas 2.0.xml", "spanish airspace 2.0.xml", "spanish airports.xml", "spain cities.xml", "Delivery centers.xml", "delivery forbidden areas 2.0.xml", "spanish working hours.xml");
                 country.SetAvailability(forbidden_flight_areas, controlled_airspace, cities_airspace, airports_airspace);
                 mean_time = country.GetMeanTime().TotalHours;
                 devStd = country.GetVariance();
@@ -130,7 +133,7 @@ namespace DroneSimulator
             else if (country_name == CountryItem.Martorell) // loading the country
             {
                 
-                country = CountryGenerator.LoadCountry("Martorell", "contour-v2.xml", "prohibited areas.xml", "airspace-v2.xml", "airports.xml", "cities.xml", "Delivery centers.xml", "delivery forbidden areas.xml", "working hours.xml");
+                country = CountryGenerator.LoadCountry(dataPath, "Martorell", "contour-v2.xml", "prohibited areas.xml", "airspace-v2.xml", "airports.xml", "cities.xml", "Delivery centers.xml", "delivery forbidden areas.xml", "working hours.xml");
                 if (country == null)
                 {
                     MessageBox.Show("Check files in");
@@ -349,7 +352,7 @@ namespace DroneSimulator
                         Country new_country = generation_obtained.Item1;
                         if (new_country.GetCountryName() == utm_country.CountryItem.Spain)
                         {
-                            country = CountryGenerator.LoadCountry("Spain", "spanish_contour_2.0.xml", "spanish forbidden areas 2.0.xml", "spanish airspace 2.0.xml", "spanish airports.xml", "spain cities.xml", "Delivery centers.xml", "delivery forbidden areas 2.0.xml", "spanish working hours.xml");
+                            country = CountryGenerator.LoadCountry(dataPath, "Spain", "spanish_contour_2.0.xml", "spanish forbidden areas 2.0.xml", "spanish airspace 2.0.xml", "spanish airports.xml", "spain cities.xml", "Delivery centers.xml", "delivery forbidden areas 2.0.xml", "spanish working hours.xml");
 
                         }
 

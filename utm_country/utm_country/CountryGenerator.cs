@@ -18,12 +18,13 @@ namespace utm_country
 
        // function
 
-        public static Country LoadCountry(string countryname, string countryfile, string forbiddenfile, string airspacefile, string airportfile, string cityfile, string deliverycentersfile, string deliveryforbiddenfile, string workinghoursfile)
+        public static Country LoadCountry(string directory, string countryname, string countryfile, string forbiddenfile, string airspacefile, string airportfile, string cityfile, string deliverycentersfile, string deliveryforbiddenfile, string workinghoursfile)
         {
-            String directory = AppDomain.CurrentDomain.BaseDirectory;
+            // String directory = AppDomain.CurrentDomain.BaseDirectory;
+
             DirectoryInfo di = new DirectoryInfo(directory + "\\Countries\\"+countryname+"\\");
             List<CountryContour> contour = reader.ReadContoursFromXML(di+countryfile);
-
+            
             CountryItem name = FindCountryName(countryname);
             List<ForbiddenArea> forbiddenareas = reader.ReadForbiddenAreasFromXML(di + forbiddenfile);
             List<ForbiddenArea> controlledairspace = reader.ReadForbiddenAreasFromXML(di + airspacefile);
@@ -48,6 +49,10 @@ namespace utm_country
             if (countryname.Equals("Spain"))
             {
                 name = CountryItem.Spain;
+            }
+            else if (countryname.Equals("Martorell"))
+            {
+                name = CountryItem.Martorell;
             }
             return name;
         }

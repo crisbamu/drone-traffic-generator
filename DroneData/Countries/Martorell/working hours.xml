@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<country name="martorell">
+<initial-time>07:00:00</initial-time>
+<final-time>23:00:00</final-time>
+<mean-time>15:00:00</mean-time>
+<standard-deviation>4</standard-deviation>
+</country>

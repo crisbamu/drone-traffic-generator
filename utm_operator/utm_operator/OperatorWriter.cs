@@ -272,9 +272,9 @@ namespace utm_operator
 
         public static void WriteXMLOperators(Country country, List<Operator> operator_list,string foldername ,string filename)
         {
-            // This function wirtes the operators and their operations in a xml file. 
-            String directory = AppDomain.CurrentDomain.BaseDirectory;
-            System.IO.DirectoryInfo di = new DirectoryInfo(directory + "\\" + foldername + "\\");
+            // This function writes the operators and their operations in a xml file. 
+            //String directory = AppDomain.CurrentDomain.BaseDirectory;
+            System.IO.DirectoryInfo di = new DirectoryInfo(foldername + "\\");
 
             if (!di.Exists)  // if it doesn't exist, create
                 di.Create();

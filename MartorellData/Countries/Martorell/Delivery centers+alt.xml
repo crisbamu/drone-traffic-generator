@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<centers>
+
+      <center name="Amazon">
+	  <coordinates>41.49933531174557,1.888629605401033,207.8</coordinates>
+	  </center>
+	  
+	  <center name="Correos">
+	  <coordinates>41.48946626264888,1.901609113704898,156.7</coordinates>
+	  </center>
+	    
+	  <center name="Uber">
+	  <coordinates>41.51576212578784,1.896470183961196,170.0</coordinates>
+	  </center>
+	    
+	  <center name="Wing">
+	  <coordinates>41.51639108654355,1.891292523592187,193.8</coordinates>
+	  </center>
+	  
+</centers>

@@ -16,7 +16,7 @@ namespace utm_drone.DataBase
         // This class aims at accessing to the drone database in order to obtain the characteristics of realistic drones.
 
         // Attributes
-        static string Databasename = "DroneDataBase.mdf";  // name of the database which contains the drones.
+        static string Databasename = "..\\..\\DataBase\\DroneDataBase.mdf";  // name of the database which contains the drones.
           static OleDbConnection cnx;
         //System.Data.SqlClient.SqlConnection con;
 

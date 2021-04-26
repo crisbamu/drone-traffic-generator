@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<operators>
+
+<operator name="Security">
+<type-of-routes>BVLOS</type-of-routes>
+<number-of-drones>2</number-of-drones>
+</operator>
+
+</operators>

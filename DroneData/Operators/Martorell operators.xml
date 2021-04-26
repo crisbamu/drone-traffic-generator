@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<operators>
+
+<operator name="Security">
+<type-of-routes>BVLOS</type-of-routes>
+<number-of-drones>20</number-of-drones>
+</operator>
+
+<operator name="Amazon">
+<type-of-routes>Delivery</type-of-routes>
+<number-of-drones>50</number-of-drones>
+</operator>
+
+<operator name="Wing">
+	<type-of-routes>Delivery</type-of-routes>
+	<number-of-drones>80</number-of-drones>
+</operator>
+
+<operator name="Correos">
+	<type-of-routes>Delivery</type-of-routes>
+	<number-of-drones>100</number-of-drones>
+</operator>
+
+<operator name="Uber">
+	<type-of-routes>Delivery</type-of-routes>
+	<number-of-drones>20</number-of-drones>
+</operator>
+
+</operators>
