@@ -229,6 +229,8 @@ namespace utm_routes
                 if (InPolygon.DeliveryRouteFilter(deliveryroute, contour, extendedforbiddenareas))
                 {
                     goodroute = true;
+                    deliveryroute.DiscretizeDeliveryRoute();
+
                 }
                 //else
                 //{

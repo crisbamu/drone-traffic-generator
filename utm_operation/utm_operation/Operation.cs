@@ -595,9 +595,9 @@ namespace utm_operation
             }
             flight.Close();
         }
-        public void WriteCSVOperations(string filename, List<Operation> operations)
+        public void WriteCSVOperations(string route, string date, List<Operation> operations)
         {
-            StreamWriter writer = new StreamWriter(filename);
+            StreamWriter writer = new StreamWriter(route+"_"+date+"_ALL.csv");
 
             writer.Write("Time\tFlight\tLon\tLat\tAlt\n"); // header
             
@@ -608,7 +608,7 @@ namespace utm_operation
                 // set the required information in Point from Operation: flightID, color of line, and next Lat;lon;alt
                 List<Point> discretizedpoints = operation.GetDiscretizedRoute();
                 discretizedpoints.Last().SetOperation(discretizedpoints.First().GetOperation());
-                WriteCSVOperation("ResultFlights/" + operation.flightId.ToString() + ".csv", discretizedpoints);
+                WriteCSVOperation(route + "_" + date + "_" + operation.flightId.ToString()+".csv", discretizedpoints);
                 alldiscretizedpoints.AddRange(discretizedpoints);
             }
 

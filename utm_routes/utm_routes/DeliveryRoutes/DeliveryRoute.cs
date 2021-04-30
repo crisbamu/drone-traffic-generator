@@ -31,7 +31,8 @@ namespace utm_routes.DeliveryRoutes
 
         public DeliveryRoute()
         {
-
+            this.Route = null;
+            this.discretizedroute = null;
         }
 
         public DeliveryRoute(Point origin, List<Point> route, double alt, drone air)
@@ -141,8 +142,8 @@ namespace utm_routes.DeliveryRoutes
             }
             newdeliveryroute.SetRoute(deliverypoints);
             newdeliveryroute.SetDestination(lastpoint); // we set the dest too
-            DiscretizedDeliveryRoute(newdeliveryroute);
-           
+            //DiscretizedDeliveryRoute(newdeliveryroute);
+
             return newdeliveryroute;
         }
         public List<Point> MakeAscension(Point launch_point, drone aircraft, double initial_height, double final_height) // discretizes the ascension path  
@@ -345,12 +346,12 @@ namespace utm_routes.DeliveryRoutes
 
         // this function discretizes a delivery route in several points and 
         // adds the return path as reverse from one way
-        public void DiscretizedDeliveryRoute(DeliveryRoute deliveryroute) 
+        public void DiscretizeDeliveryRoute() 
         {
-            deliveryroute.SetAircraft(aircraft_tune(deliveryroute.GetAircraft()));
+            this.SetAircraft(aircraft_tune(this.GetAircraft()));
 
-            Point orig = deliveryroute.GetOriginPoint();
-            Point dest = deliveryroute.GetDestination(); //same as GetRoute().Last()
+            Point orig = this.GetOriginPoint();
+            Point dest = this.GetDestination(); //same as GetRoute().Last()
 
             // FIRST: concatennates forward + backward route 
             List<Point> forwardroute = new List<Point>();
@@ -359,7 +360,7 @@ namespace utm_routes.DeliveryRoutes
 
             forwardroute.Add(orig);// take-off point
             
-            foreach (Point punto in deliveryroute.GetRoute())
+            foreach (Point punto in this.GetRoute())
             {
                 forwardroute.Add(punto);
                 returnroute.Push(punto);
@@ -372,7 +373,7 @@ namespace utm_routes.DeliveryRoutes
             }
             backroute.Add(orig); // land point
             // we have 2 list of points such as fw=0,1,2,3 bw=3,2,1,0
-            SetRadarRoute(deliveryroute, forwardroute, backroute);
+            SetRadarRoute(this, forwardroute, backroute);
         }
 
         public DeliveryRoute AddTime(DeliveryRoute route, Random rnd, double meantime, double stdDev, TimeSpan lowerlimit, TimeSpan upperlimit) // this function adds the time to the discrtized delivery route

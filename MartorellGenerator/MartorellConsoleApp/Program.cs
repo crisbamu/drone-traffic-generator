@@ -66,10 +66,10 @@ namespace MartorellConsoleApp
             Random rnd = new Random();
 
             // string binaryPath = System.IO.Path.GetDirectoryName(System.Reflection.Assembly.GetEntryAssembly().Location);
-            string binaryPath = dataPath;
+            //string binaryPath = dataPath; Use the dataPath defined in class Simulation
 
             // loading Martorell
-            country = CountryGenerator.LoadCountry(binaryPath, "Martorell", "contour-v2+alt.xml", "prohibited areas.xml", "airspace-v2.xml", "airports.xml", "cities.xml", "Delivery centers+alt.xml", "delivery forbidden areas.xml", "working hours.xml");
+            country = CountryGenerator.LoadCountry(dataPath, "Martorell", "contour-v2+alt.xml", "prohibited areas.xml", "airspace-v2.xml", "airports.xml", "cities.xml", "Delivery centers+alt.xml", "delivery forbidden areas.xml", "working hours.xml");
             if (country == null)
             {
                 Console.WriteLine("Check files exits for Martorell in Countries");
@@ -82,7 +82,7 @@ namespace MartorellConsoleApp
             upper_limit = country.GetFinalTime();
 
             // operator_list = operator_f1.GetOperatorList();
-            string file_opers = binaryPath + "\\Operators\\Martorell operators delivery.xml";
+            string file_opers = dataPath + "\\Operators\\Martorell operators delivery.xml";
             if (String.IsNullOrEmpty(file_opers))
             {
                 Console.WriteLine("Error in openning file {0}", file_opers);
@@ -93,7 +93,7 @@ namespace MartorellConsoleApp
                 ScaleFleet(scale);
             
             //var routesparameters = routes_f1.GetRouteParameters();
-            string file_ops = binaryPath + "\\Route_Parameters\\Martorell parameters.xml";
+            string file_ops = dataPath + "\\Route_Parameters\\Martorell parameters.xml";
             if (String.IsNullOrEmpty(file_ops))
             {
                 Console.WriteLine("Error in openning file {0}", file_ops);
@@ -105,7 +105,7 @@ namespace MartorellConsoleApp
             operator_generator = new OperatorGenerator(country, null, null, bvlos_parameters, delivery_parameters);
 
             // drone_type_list = drone_f1.GetListOfDrones();
-            string file_drones = binaryPath + "\\Drones\\DroneList.xml";
+            string file_drones = dataPath + "\\Drones\\DroneList.xml";
             if (String.IsNullOrEmpty(file_drones))
             {
                 Console.WriteLine("Error in openning file {0}", file_drones);
@@ -130,12 +130,12 @@ namespace MartorellConsoleApp
             string record_name = @"Record " + date + ".xml";
             OperatorWriter.WriteXMLOperators(country, operator_list, "Results", record_name);
 
-            string fleetofdrones = dataPath + "Results/fleetofdrones.txt";
+            string fleetofdrones = dataPath + "/Results/fleetofdrones.txt";
             OperatorWriter.WriteOperatorsAndDrones(operator_list, fleetofdrones); // write the operators to a .txt file 
-            string timeroute = dataPath + "Results/Routes_" + date+".kml";
+            string timeroute = dataPath + "/Results/Routes_" + date+".kml";
             OperatorWriter.WriteKMLOperations(timeroute, operator_list);
-            timeroute = dataPath + "Results/Routes_" + date + ".csv";
-            OperatorWriter.WriteOperationsCSVs(timeroute, operator_list);
+            timeroute = dataPath + "/Results/Routes_";
+            OperatorWriter.WriteOperationsCSVs(timeroute, date, operator_list);
             Console.WriteLine("Routes have been saved in {0}", timeroute);
         }
         public void SetSimulation(string filename)
@@ -153,7 +153,7 @@ namespace MartorellConsoleApp
         }
         public void AnalyzeConflicts(float scale, String date)
         {
-            string conflicts = dataPath + "Results/Conflicts_" + date;
+            string conflicts = dataPath + "/Results/Conflicts_" + date;
             OperationAnalizer.SetSafeDistance(scale);
             List<Conflict> conflict_points = OperationAnalizer.FindTemporalConflicts(operator_list);
             OperationAnalizer.WriteConflicts(conflict_points, conflicts + ".csv");

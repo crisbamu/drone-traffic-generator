@@ -1,0 +1,34 @@
+operator: Amazon
+fleetofdrones:
+23000000
+23000001
+23000002
+23000003
+23000004
+23000005
+23000006
+23000007
+23000008
+23000009
+
+
+operator: Wing
+fleetofdrones:
+23000010
+
+
+operator: Correos
+fleetofdrones:
+23000011
+23000012
+23000013
+23000014
+23000015
+
+
+operator: Uber
+fleetofdrones:
+23000016
+23000017
+
+

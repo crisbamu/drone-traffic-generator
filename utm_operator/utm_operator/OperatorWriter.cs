@@ -176,11 +176,11 @@ namespace utm_operator
             new Operation().WriteKMLOperations(filename, operations);
         }
 
-        public static void WriteOperationsCSVs(string filename, List<Operator> operators)
+        public static void WriteOperationsCSVs(string filename, string date, List<Operator> operators)
         {
             // This function writes the operations in a KML file
             List<Operation> operations = GetListOfOperations(operators);
-            new Operation().WriteCSVOperations(filename, operations);
+            new Operation().WriteCSVOperations(filename, date, operations);
         }
         public static void WriteMavLinkOperations(List<Operator> operators,  String foldername)
         {

@@ -481,7 +481,7 @@ namespace utm_routes
             if (!PointFilter(route.GetOriginPoint(), contour, forbidden))
                 return false;
 
-            foreach (Point punto in route.GetDiscretizedRoute())
+            foreach (Point punto in route.GetRoute())
             {
                 if (!PointFilter(punto, contour, forbidden))
                     return false;

@@ -315,7 +315,7 @@ namespace DroneSimulator
             {
                 //MessageBox.Show("The simulator is about to work out the conflicts between operations. This function might take several minutes to execute.");
                 ConflictPoints = OperationAnalizer.FindTemporalConflicts(operator_list);
-                OperationAnalizer.WriteKMLConflicts(ConflictPoints, "BADformat_conflicts.kml");
+                AnalysisWriter.WriteKMLConflicts(ConflictPoints, "BADformat_conflicts.kml");
                 // how to call instead to?? AnalisysWriter.WriteKMLConflicts(ConflictPoints, "conflicts.kml");
 
 
