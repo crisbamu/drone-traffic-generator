@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Globalization;
 
 using utm_analysis;
 using utm_country;
@@ -21,7 +22,7 @@ namespace MartorellConsoleApp
     class Simulation
     {
         string dataPath = AppDomain.CurrentDomain.BaseDirectory 
-            + "..\\..\\..\\..\\MartorellData";
+            + "..\\..\\..\\MartorellData";
 
         Country country;
         // Attributes needed for a simulation 
@@ -249,6 +250,9 @@ namespace MartorellConsoleApp
          
         static void Main(string[] args)
         {
+            // Change the current culture to en-US
+            CultureInfo.CurrentCulture = new CultureInfo("en-US", false);
+
             String simdate = DateTime.Now.ToString("dd-MM-yyyy_HHmm");
 
             Console.WriteLine("Martorell Industrial Polygon traffic generator");
