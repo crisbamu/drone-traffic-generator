@@ -4,9 +4,8 @@
 ## Get latest from https://github.com/github/gitignore/blob/master/VisualStudio.gitignore
 
 #sim results
-MartorellGeneartor/MartorellData/Results/
+MartorellGeneartor/MartorellData/Results/*
 MartorellGeneartor/MartorellData/fixsim.xml
-MartorellGenerator/MartorellData/Results/Routes_13-05-2021_1647.kml
 
 # User-specific files
 *.rsuser
