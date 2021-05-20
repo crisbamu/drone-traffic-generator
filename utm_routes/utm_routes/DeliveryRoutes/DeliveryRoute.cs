@@ -130,6 +130,7 @@ namespace utm_routes.DeliveryRoutes
             double deltadistance = truedistance / numberofpoints;
             double angle = 2 * Math.PI * rnd.NextDouble();
 
+            deliverypoints.Add(origin);
             Point lastpoint = origin;
             double lastangle = angle;
             for (int i = 0; i < numberofpoints; i++)
@@ -140,6 +141,7 @@ namespace utm_routes.DeliveryRoutes
                 lastpoint = nextpoint;
                 lastangle = trueangle;
             }
+            
             newdeliveryroute.SetRoute(deliverypoints);
             newdeliveryroute.SetDestination(lastpoint); // we set the dest too
             //DiscretizedDeliveryRoute(newdeliveryroute);
@@ -262,7 +264,7 @@ namespace utm_routes.DeliveryRoutes
             daytime = discretizedroute.Last().GetTime().TimeOfDay;
 
             // way forward
-            for (int i = 0; i < forwardroute.Count - 1; i++)
+            for (int i = 1; i < forwardroute.Count - 1; i++)
             {
                 double distance = LatLongProjection.HaversineDistance(forwardroute[i], forwardroute[i + 1]);
                 double angle = LatLongProjection.GetBearing(forwardroute[i], forwardroute[i + 1]);
@@ -310,7 +312,7 @@ namespace utm_routes.DeliveryRoutes
             daytime = daytime + TimeSpan.FromSeconds(5.0);
 
             // way backwards
-            for (int i = 0; i < backroute.Count - 1; i++)
+            for (int i = 0; i < backroute.Count - 2; i++)
             {
                 double distance = LatLongProjection.HaversineDistance(backroute[i], backroute[i + 1]);
                 double angle = LatLongProjection.GetBearing(backroute[i], backroute[i + 1]);
@@ -378,8 +380,6 @@ namespace utm_routes.DeliveryRoutes
 
         public DeliveryRoute AddTime(DeliveryRoute route, Random rnd, double meantime, double stdDev, TimeSpan lowerlimit, TimeSpan upperlimit) // this function adds the time to the discrtized delivery route
         {
-          
-            
             bool well_allocated = false;
             while (well_allocated == false)
             {
@@ -396,7 +396,22 @@ namespace utm_routes.DeliveryRoutes
                     route = copy_route.GetCopy();
                 }
             }
-
+            //Now let's put also time to the Route (large) Segments
+            int isp, ilp;
+            for (isp = 0, ilp = 0; isp < route.GetDiscretizedRoute().Count && ilp < route.GetRoute().Count; isp++)
+            {
+                if (route.GetDiscretizedRoute()[isp].GetLatitude() == route.GetRoute()[ilp].GetLatitude()
+                    &&
+                    route.GetDiscretizedRoute()[isp].GetLongitude() == route.GetRoute()[ilp].GetLongitude()
+                    ) // && (route.GetDiscretizedRoute()[isp].GetAltitude() == route.GetRoute()[ilp].GetAltitude()
+                    
+                {
+                    route.GetRoute()[ilp].SetTime(route.GetDiscretizedRoute()[isp].GetTime());
+                    route.GetRoute()[ilp].SetAltitude(route.GetAltitude());
+                    ilp++;
+                }
+            }
+            
             return route;
         }
 

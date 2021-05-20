@@ -72,11 +72,14 @@ namespace utm_analysis
             this.op2 = b;
         }
 
-        public void SetCpa(Point b, double dist=0.0)
+        public void SetCpa(Point b, double dist=0.0, double alt=0.0)
         {
             this.cpa = new Point (b.GetLatitude(), b.GetLongitude(), b.GetAltitude(), b.GetTime());
             this.cpa_dist = dist;
-            this.alt = b.GetAltitude();
+            if (alt != 0)
+                this.alt = b.GetAltitude();
+            else
+                this.alt = alt;
         }
 
         public Conflict GetCopy()

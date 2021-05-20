@@ -46,11 +46,12 @@ namespace utm_operation
 
         // functions
 
-        public Operation GenerateOperation(drone drone, OperationType typeofoperation,int parts ,Random rnd)
+        public Operation GenerateOperation(string name, drone drone, OperationType typeofoperation,int parts ,Random rnd)
         {
              RouteGenerator routegenerator = new RouteGenerator(country, vlosparameters, evlosparameters, bvlosparameters, deliveryparameters);
             
-            Operation newoperation = new Operation();
+            Operation newoperation = new Operation(name);
+            newoperation.operatorName = name;
             if(typeofoperation==OperationType.VLOS)
             {
                 VLOSRoute route = routegenerator.GenerateVLOSRoute(drone,parts,rnd);
@@ -231,7 +232,7 @@ namespace utm_operation
 
         }
 
-        public List<Operation> GenerateListOfOperations(drone aircraft, OperationType typeofoperation, int numberofoperations,int parts ,double meantime, double stdDev, TimeSpan lowerlimit, TimeSpan upperlimit, Random rnd)
+        public List<Operation> GenerateListOfOperations(string name, drone aircraft, OperationType typeofoperation, int numberofoperations,int parts ,double meantime, double stdDev, TimeSpan lowerlimit, TimeSpan upperlimit, Random rnd)
         {
             List<Operation> operationlist = new List<Operation>();
             int i = 0;
@@ -239,7 +240,7 @@ namespace utm_operation
             {
                 int attemp = 0;
                 bool goodroute = false;
-                Operation newoperation = GenerateOperation(aircraft, typeofoperation, parts,rnd);
+                Operation newoperation = GenerateOperation(name, aircraft, typeofoperation, parts,rnd);
                 Operation operationcopy = newoperation.GetCopy();
                 while (goodroute == false && attemp<=20)
                 {

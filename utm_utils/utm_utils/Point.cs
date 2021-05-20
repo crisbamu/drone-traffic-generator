@@ -15,7 +15,7 @@ namespace utm_utils
         private double longitude;
         private double altitude;
         private DateTime time;
-        private int operation;
+        private String operation;
         private String color;
         private double nextlatitude;
         private double nextlongitude;
@@ -36,7 +36,20 @@ namespace utm_utils
             this.nextlongitude = 0.0;
             this.nextaltitude = 0.0;
             this.time = DateTime.Today;
-            this.operation = -1;
+            this.operation = "";
+            this.color = "";
+        }
+
+        public Point(double a, double b, double c)
+        {
+            this.latitude = a;
+            this.longitude = b;
+            this.altitude = c;
+            this.nextlatitude = 0.0;
+            this.nextlongitude = 0.0;
+            this.nextaltitude = 0.0;
+            this.time = DateTime.Today; ;
+            this.operation = "";
             this.color = "";
         }
 
@@ -49,7 +62,7 @@ namespace utm_utils
             this.nextlongitude = 0.0;
             this.nextaltitude = 0.0;
             this.time = d;
-            this.operation = -1;
+            this.operation = "";
             this.color = "";
         }
         // Setters and Getters
@@ -71,7 +84,7 @@ namespace utm_utils
         {
             this.time = a;
         }
-        public void SetOperation(int op)
+        public void SetOperation(String op)
         {
             this.operation = op;
         }
@@ -112,7 +125,7 @@ namespace utm_utils
         {
             return this.time;
         }
-        public int GetOperation()
+        public String GetOperation()
         {
             return this.operation;
         }

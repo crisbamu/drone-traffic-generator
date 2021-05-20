@@ -92,7 +92,7 @@ namespace utm_operator
 
         public Operation GetOperation(generationOperatorOperation op, List<drone> drone_list)
         {
-            Operation new_operation = new Operation();
+            Operation new_operation = new Operation("__");
             string drone_identifier = op.drone.ToString();
             drone aircraft = FindDroneInList(drone_list, drone_identifier);
             new_operation.SetAircraft(aircraft);
@@ -216,7 +216,7 @@ namespace utm_operator
             return route;
         }
 
-        public List<Point> GetDiscretizedList(generationOperatorOperation op, int flight_id)
+        public List<Point> GetDiscretizedList(generationOperatorOperation op, String flight_id)
         {
             List<Point> discretized_list = new List<Point>();
             foreach (generationOperatorOperationPoint point in op.discretizedroute)

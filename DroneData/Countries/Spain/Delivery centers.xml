@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<centers>
+
+      <center name="El PRAT">
+	  <coordinates>41.313652,2.074825</coordinates>
+	  </center>
+	  
+	  <center name="SAN FERNANDO DE HENARES">
+	  <coordinates>40.447455,-3.498227</coordinates>
+	  </center>
+</centers>

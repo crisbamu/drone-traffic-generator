@@ -173,14 +173,14 @@ namespace utm_operator
         {
             // This function writes the operations in a KML file
             List<Operation> operations = GetListOfOperations(operators);
-            new Operation().WriteKMLOperations(filename, operations);
+            OperationWriter.WriteKMLOperations(filename, operations);
         }
 
         public static void WriteOperationsCSVs(string filename, string date, List<Operator> operators)
         {
             // This function writes the operations in a KML file
             List<Operation> operations = GetListOfOperations(operators);
-            new Operation().WriteCSVOperations(filename, date, operations);
+            OperationWriter.WriteCSVOperations(filename, date, operations);
         }
         public static void WriteMavLinkOperations(List<Operator> operators,  String foldername)
         {
@@ -230,13 +230,13 @@ namespace utm_operator
             }
         }
 
-        public static void WriteCSVOperations(string filename, List<Operator> operators)
-        {
-            // This function writes the operations into a csv file
-            List<Operation> operations = GetListOfOperations(operators);
-            CSVWriter writer = new CSVWriter();
-            writer.WriteOperatiosInCSV(filename, operations);
-        }
+        //public static void WriteCSVOperations(string filename, List<Operator> operators)
+        //{
+        //    // This function writes the operations into a csv file
+        //    List<Operation> operations = GetListOfOperations(operators);
+        //    CSVWriter writer = new CSVWriter();
+        //    writer.WriteOperatiosInCSV(filename, operations);
+        //}
 
         public static List<Operation> GetListOfOperations(List<Operator> operators)
         {

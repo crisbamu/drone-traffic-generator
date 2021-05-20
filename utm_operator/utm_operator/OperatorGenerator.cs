@@ -298,7 +298,7 @@ namespace utm_operator
                     OperatorType typeofoperator = op.GetOperatorType();
                     OperationType typeofoperation = TransformFromOperatorToOperationType(typeofoperator);
                     int numberofoperationsperdrone = rnd.Next(1, 4);
-                    List<Operation> operationlist = operation_generator.GenerateListOfOperations(dronecopy, typeofoperation,numberofoperationsperdrone, parts, meantime, stdDev, lowerlimit, upperlimit, rnd);
+                    List<Operation> operationlist = operation_generator.GenerateListOfOperations(op.GetIdentifier(),dronecopy, typeofoperation,numberofoperationsperdrone, parts, meantime, stdDev, lowerlimit, upperlimit, rnd);
                     fleetofdrones.Add(dronecopy);
                     wholeoperationlist.AddRange(operationlist);
                     i++;
@@ -338,7 +338,7 @@ namespace utm_operator
                     drone selected_drone = drone_list[random_drone].GetCopy();
                     selected_drone.SetIdentifier(Convert.ToString(Drone_Identifier + x + z));
                     int operations_per_drone = rnd.Next(1, 4);
-                    List<Operation> set_operations = operation_generator.GenerateListOfOperations(selected_drone, OperationType.VLOSorBVLOS, operations_per_drone,parts, meantime, stdDev, lowerlimit, upperlimit, rnd);
+                    List<Operation> set_operations = operation_generator.GenerateListOfOperations(new_operator.GetIdentifier(), selected_drone, OperationType.VLOSorBVLOS, operations_per_drone,parts, meantime, stdDev, lowerlimit, upperlimit, rnd);
                     fleet_of_drones.Add(selected_drone);
                     operation_list.AddRange(set_operations);
                     }
@@ -369,7 +369,7 @@ namespace utm_operator
                     drone selected_drone = drone_list[random_drone].GetCopy();
                     selected_drone.SetIdentifier(Convert.ToString(Drone_Identifier + x + z));
                     int operations_per_drone = rnd.Next(1, 4);
-                    List<Operation> set_operations = operation_generator.GenerateListOfOperations(selected_drone, OperationType.VLOSorBVLOS, operations_per_drone, parts,meantime, stdDev, lowerlimit, upperlimit, rnd);
+                    List<Operation> set_operations = operation_generator.GenerateListOfOperations(new_operator.GetIdentifier(),selected_drone, OperationType.VLOSorBVLOS, operations_per_drone, parts,meantime, stdDev, lowerlimit, upperlimit, rnd);
                     fleet_of_drones.Add(selected_drone);
                     operation_list.AddRange(set_operations);
                    
@@ -402,7 +402,7 @@ namespace utm_operator
                     drone selected_drone = drone_list[random_drone].GetCopy();
                     selected_drone.SetIdentifier(Convert.ToString(Drone_Identifier + x + z));
                     int operations_per_drone = rnd.Next(1, 4);
-                    List<Operation> set_operations = operation_generator.GenerateListOfOperations(selected_drone, OperationType.VLOSorBVLOS, operations_per_drone, parts,meantime, stdDev, lowerlimit, upperlimit, rnd);
+                    List<Operation> set_operations = operation_generator.GenerateListOfOperations(new_operator.GetIdentifier(),selected_drone, OperationType.VLOSorBVLOS, operations_per_drone, parts,meantime, stdDev, lowerlimit, upperlimit, rnd);
                     fleet_of_drones.Add(selected_drone);
                     operation_list.AddRange(set_operations);
                 }
@@ -428,7 +428,7 @@ namespace utm_operator
                 drone selected_drone = drone_list[random_drone].GetCopy();
                 selected_drone.SetIdentifier(Convert.ToString(Drone_Identifier + n + x));
                 int operations_per_drone = rnd.Next(1, 4);
-                List<Operation> set_operations = operation_generator.GenerateListOfOperations(selected_drone, OperationType.Delivery, operations_per_drone, parts,meantime, stdDev, lowerlimit, upperlimit, rnd);
+                List<Operation> set_operations = operation_generator.GenerateListOfOperations(delivery_operator.GetIdentifier(), selected_drone, OperationType.Delivery, operations_per_drone, parts,meantime, stdDev, lowerlimit, upperlimit, rnd);
                 delivery_fleet.Add(selected_drone);
                 delivery_operations.AddRange(set_operations);
                 delivery_operator.SetFleetOfDrones(delivery_fleet);

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<forbidden-areas>
+    <polygons>
+	
+	<polygon name="EL PRAT AIRPORT" type="points">
+	     <point>41.297304 2.052188</point>
+		 <point>41.309171 2.085856</point>
+		 <point>41.314845 2.105854</point>
+		 <point>41.303755 2.11006</point>
+		 <point>41.297437 2.102679</point>
+		 <point>41.290214 2.108</point>
+		 <point>41.286473 2.103794</point>
+		 <point>41.283636 2.094353</point>
+		 <point>41.276734 2.07178</point>
+		 <point>41.284216 2.064398</point>
+		 <point>41.292149 2.052811</point>
+	</polygon>
+	
+	<polygon name="SABADELL AIRPORT" type="points">
+	     <point>41.521917 2.09551</point>
+		 <point>41.528022 2.103535</point>
+		 <point>41.520311 2.11774</point>
+		 <point>41.513084 2.109244</point>
+	</polygon>
+	
+	<polygon name="BARAJAS AIRPORT" type="points">
+	     <point>40.447958 -3.552141</point>
+		 <point>40.472251 -3.514891</point>
+		 <point>40.499799 -3.542357</point>
+		 <point>40.542861 -3.544416</point>
+		 <point>40.544035 -3.586817</point>
+		 <point>40.507761 -3.601236</point>
+		 <point>40.47643 -3.605185</point>
+		 <point>40.45411 -3.596248</point>
+		 <point>40.443398 -3.573417</point>
+	</polygon>
+	
+	<polygon name="TORREJON DE ARDOZ AIRPORT" type="points">
+	     <point>40.481296 -3.484555</point>
+		 <point>40.461969 -3.484641</point>
+		 <point>40.461618 -3.456687</point>
+		 <point>40.470398 -3.408447</point>
+		 <point>40.482803 -3.400122</point>
+		 <point>40.500297 -3.403812</point>
+		 <point>40.502385 -3.414713</point>
+		 <point>40.509825 -3.414627</point>
+		 <point>40.523136 -3.432909</point>
+		 <point>40.513153 -3.463293</point>
+		 <point>40.51113 -3.49608</point>
+		 <point>40.498404 -3.487926</point>
+	</polygon>
+	
+	
+	
+    </polygons>
+</forbidden-areas>

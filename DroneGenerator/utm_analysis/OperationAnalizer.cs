@@ -103,6 +103,39 @@ namespace utm_analysis
             return maximum_distance;
 
         }
+        private static bool time_overlaps(Operation op1, Operation op2)
+        {
+            return (op1.GetStartTime() < op2.GetFinalTime() && op1.GetFinalTime() > op2.GetStartTime());
+        }
+
+        /* function by CBM:
+        *      calculate conflicts using RTCA formulas
+        */
+        public static List<Conflict> FindRTCAConflicts(List<Operator> operatorlist)
+        {
+            List<Operation> operationlist = OperatorWriter.GetListOfOperations(operatorlist);
+            List<Conflict> cl = new List<Conflict>();
+            for (int i = 0; i < operationlist.Count - 1; i++)
+            {
+                int n = i + 1;
+                while (n < operationlist.Count)
+                {
+                    Operation op1  = operationlist[i];
+                    Operation op2 = operationlist[n];
+
+                    var result = CheckRTCAConflict(op1, op2);
+                    bool conflict = result.Item1;
+                    if (conflict == true)
+                    {
+                        cl.Add(result.Item2);
+                    }
+                    n++;
+                }
+                i++; ;
+            }
+            return cl; 
+        }
+        
 
         /* function changed by CBM:
          *      calculate conflicts also delivery-to-delivery
@@ -166,9 +199,114 @@ namespace utm_analysis
 
             return min_dist;
         }
+
+        public static bool TimeOverlaps(DateTime t1, DateTime t2, DateTime t3, DateTime t4)
+        {
+            return !(t2 < t3 || t1 > t4);
+        }
+        public static void delay (Point p, double secs, double vx, double vy, double vz)
+        {
+            p.SetLatitude ( p.GetLatitude()+(vy*secs)/ Math.PI / 180);
+            p.SetLongitude ( p.GetLongitude()+vx*secs/Math.PI/180);
+            p.SetAltitude ( p.GetAltitude()+vy*secs);
+            p.SetTime(p.GetTime() + TimeSpan.FromSeconds(secs));    
+        }
+        public static void Sincronize(Point p1, Point p2, Point p3, Point p4)
+        {
+            double t1 = p1.GetTime().TimeOfDay.TotalSeconds;
+            double t3 = p3.GetTime().TimeOfDay.TotalSeconds;
+            if (t1 == t3)
+                return;
+            if (t1 < t3)
+            {
+                double tseg = p2.GetTime().TimeOfDay.TotalSeconds-t1;
+                double tdelay = t3 - t1;
+                double vx1 = ((p2.GetLongitude() - p1.GetLongitude()) * Math.PI / 180) / tseg;
+                double vy1 = ((p2.GetLatitude() - p1.GetLatitude()) * Math.PI / 180) / tseg;
+                delay(p1, tdelay, vx1, vy1, (p2.GetAltitude()-p1.GetAltitude())/ tseg);
+            }
+            else
+            {
+                double tseg = p4.GetTime().TimeOfDay.TotalSeconds-t3;
+                double tdelay = t1 - t3;
+                double vx2 = ((p4.GetLongitude() - p3.GetLongitude()) * Math.PI / 180) / tseg;
+                double vy2 = ((p4.GetLatitude() - p3.GetLatitude()) * Math.PI / 180) / tseg;
+                delay(p3, tdelay, vx2, vy2, (p4.GetAltitude()-p3.GetAltitude())/tseg);
+            }
+        }
+
+        public static Tuple<bool, Conflict> GetRTCAConflict(Point FirstPoint, Point SecondPoint, Point ThirdPoint, Point FourthPoint)
+        {
+            if (!TimeOverlaps(FirstPoint.GetTime(), SecondPoint.GetTime(), ThirdPoint.GetTime(), FourthPoint.GetTime()))
+                return new Tuple<bool, Conflict>(false, null);
+            
+            // project the First (or the Third) point such that their time is the same 
+            Sincronize(FirstPoint, SecondPoint, ThirdPoint, FourthPoint);
+
+            double x1 = FirstPoint.GetLongitude() * Math.PI / 180;
+            double y1 = FirstPoint.GetLatitude() * Math.PI / 180;
+            double t1 = (SecondPoint.GetTime() - FirstPoint.GetTime()).TotalSeconds;
+            double vx1 = (t1!=0?(SecondPoint.GetLongitude() * Math.PI / 180 - x1) / t1:0);
+            double vy1 = (t1!=0?(SecondPoint.GetLatitude() * Math.PI / 180 - y1) / t1:0);
+
+            double x2 = ThirdPoint.GetLongitude() * Math.PI / 180;
+            double y2 = ThirdPoint.GetLatitude() * Math.PI / 180;
+            double t2= (FourthPoint.GetTime() - ThirdPoint.GetTime()).TotalSeconds;
+            double vx2 = (t2!=0?(FourthPoint.GetLongitude() * Math.PI / 180 - x1) / t2:0);
+            double vy2 = (t2!=0?(FourthPoint.GetLatitude() * Math.PI / 180 - y1) / t2:0);
+
+            double dx = x2 - x1;
+            double dy = y2 - y1;
+            double vrx = vx2 - vx1;
+            double vry = vy2 - vy1;
+            double hmd, tcpa, cx, cy;
+
+            if (vrx == 0 && vry == 0)
+            {
+                tcpa = 0;
+                cx = (x1+x2)/2;
+                cy = (y1+y2)/2;
+                hmd = Math.Sqrt(Math.Pow(dx, 2) + Math.Pow(dy, 2));
+            }
+            else
+            {
+                tcpa = -(dx * vrx + dy * vry) / (vrx * vrx + vry * vry);
+                cx = dx + vrx * tcpa;
+                cy = dy + vry * tcpa;
+                hmd = Math.Sqrt(Math.Pow(cx, 2) + Math.Pow(cy, 2));
+            }
+            
+            // lets check that the tcpa is within the 2 segment times
+            if (tcpa<0 || tcpa>t1 || tcpa>t2)
+                return new Tuple<bool, Conflict>(false, null);
+
+            // lets check that hmd is below the limits
+            if (hmd > MAX_SAFE_DISTANCE)
+                return new Tuple<bool, Conflict>(false, null);
+
+            // Now check Altitudes at CPA
+            double v1 = (t1!=0?(SecondPoint.GetAltitude()-FirstPoint.GetAltitude())/t1:0);
+            double h1 = (tcpa!=0?FirstPoint.GetAltitude() + v1/tcpa:0);
+
+            double v2 = (t2!=0?(FourthPoint.GetAltitude() - ThirdPoint.GetAltitude())/t2:0);
+            double h2 = (tcpa != 0 ? ThirdPoint.GetAltitude()+ v2/tcpa:0);
+
+            if (Math.Abs(h1 - h2) > MAX_SAFE_ALT)
+                return new Tuple<bool, Conflict>(false, null);
+
+            // Create the conflict and return it
+            Conflict conflict_info = new Conflict();
+            conflict_info.SetCpa(new Point(cx / Math.PI / 180, cy /Math.PI / 180, (h1+h2)/2.0), hmd);
+            return new Tuple<bool, Conflict>(true, conflict_info);
+        }
+
         public static Tuple<bool, Conflict> GetConflict(Point FirstPoint, Point SecondPoint, Point ThirdPoint, Point FourthPoint)
         {
             Conflict conflict_info = new Conflict();
+
+            if (!TimeOverlaps(FirstPoint.GetTime(), SecondPoint.GetTime(), ThirdPoint.GetTime(),FourthPoint.GetTime()))
+                return new Tuple<bool, Conflict>(false, conflict_info);
+
             // Easy way - valid also for parallel trajectories or hover routes
             double dist1to3 = Math.Abs(LatLongProjection.HaversineDistance(FirstPoint, ThirdPoint));
             double alt1to3 = Math.Abs(FirstPoint.GetAltitude() - ThirdPoint.GetAltitude());
@@ -247,6 +385,44 @@ namespace utm_analysis
             return potential;
         }
 
+        public static Tuple<bool, Conflict> CheckRTCAConflict(Operation first_operation, Operation second_operation)
+        {
+            bool conflict = false;
+            Conflict ConflictPoint = new Conflict();
+            List<Point> firstdiscretizedroute = first_operation.GetRoute();
+            List <Point>  seconddiscretizedroute = second_operation.GetRoute();
+            bool temporal_conflict = AreTemporalPotentialConflictiveRoutes(first_operation, second_operation);
+            if (temporal_conflict == true)
+            {
+                //bool spacial_conflict = ArePotentialConflictiveRoutes(first_operation, second_operation);
+                if (true) //(spacial_conflict == true)
+                {
+                    for (int i = 0; i < firstdiscretizedroute.Count - 1; i++)
+                    {
+                        Point FirstPoint = firstdiscretizedroute[i];
+                        Point SecondPoint = firstdiscretizedroute[i + 1];
+                        for (int n = 0; n < seconddiscretizedroute.Count - 1; n++)
+                        {
+                            Point ThirdPoint = seconddiscretizedroute[n];
+                            Point FourthPoint = seconddiscretizedroute[n + 1];
+                            var result = GetRTCAConflict(FirstPoint, SecondPoint, ThirdPoint, FourthPoint);
+                            bool is_conflict = result.Item1;
+                            if (is_conflict == true)
+                            {
+                                result.Item2.SetOp1(first_operation);
+                                result.Item2.SetOp2(second_operation);
+                                ConflictPoint = result.Item2;
+                                conflict = true;
+                                return new Tuple<bool, Conflict>(conflict, ConflictPoint);
+                            }
+
+                        }
+                    }
+                }
+            }
+            return new Tuple<bool, Conflict>(conflict, ConflictPoint);
+        }
+
         public static Tuple<bool, Conflict> GetTemporalConflict(Operation first_operation, Operation second_operation)
         {
             bool conflict = false;
@@ -268,6 +444,7 @@ namespace utm_analysis
                             Point ThirdPoint = seconddiscretizedroute[n];
                             Point FourthPoint = seconddiscretizedroute[n + 1];
                             var result = GetConflict(FirstPoint, SecondPoint, ThirdPoint, FourthPoint);
+                            //var result = GetRTCAConflict(FirstPoint, SecondPoint, ThirdPoint, FourthPoint);
                             bool is_conflict = result.Item1;
                             if (is_conflict == true)
                             {

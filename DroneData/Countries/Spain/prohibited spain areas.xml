@@ -1,0 +1,1359 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<prohibited-areas>
+ <!-- the radius are in NM and the coordinates are latitude and longitude in degrees-->
+   <polygons>
+   
+    <!--pohibited areas -->
+   
+	  
+	  <polygon name="GMP21" type="points">
+	     <point>35.946389 -5.483333</point>
+		 <point>35.879443 -5.576667</point>
+		 <point>35.848332 -5.542222</point>
+		 <point>35.915556 -5.450833</point>
+	 </polygon>
+	 
+	 <polygon name="GEP113 PEÑÓN DE VELEZ" type="circle">
+	     <reference-point>35.171666 -4.2975</reference-point>
+	     <radius>1</radius>
+	 </polygon>
+	 
+	 <polygon name="GEP114 PEÑÓN DE ALHUCEMAS" type="circle">
+	     <reference-point>35.213056 -3.888056</reference-point>
+	     <radius>1</radius>
+	 </polygon>
+	 
+	 <polygon name="GEP116 I.CHAFARINAS" type="circle">
+	     <reference-point>35.183332 -2.416667</reference-point>
+	     <radius>5</radius>
+	 </polygon>
+	 
+	 
+	 <polygon name="LEP118 EL PLANTÍO" type="points">
+	     <point>40.542499 -3.747778</point>
+		 <point>40.448056 -3.716389</point>
+		 <point>40.429721 -3.720833</point>
+		 <point>40.436110 -3.821111</point>
+		 <point>40.475 -3.876667</point>
+		 <point>40.509166 -3.886667</point>
+		 <point>40.511111 -3.871111</point>
+		 <point>40.542499 -3.864722</point>
+	 </polygon>
+	 
+	 
+	 <polygon name="LEP136 ASCÓ" type="circle">
+	     <reference-point>41.202778 0.568611</reference-point>
+	     <radius>3</radius>
+	 </polygon>
+	 
+	 <polygon name="LEP137 VANDELLÓS" type="circle">
+	     <reference-point>40.9525 0.866389</reference-point>
+	     <radius>3</radius>
+	 </polygon>
+	 
+	 <polygon name="LEP138 COFRENTES" type="circle">
+	     <reference-point>39.211111 -1.052778</reference-point>
+	     <radius>5</radius>
+	 </polygon>
+	 
+	 <polygon name="LEP139 TRILLO" type="circle">
+	     <reference-point>40.703333 -2.621389</reference-point>
+	     <radius>3</radius>
+	 </polygon>
+	 
+	 <polygon name="LEP140 JOSÉ CABRERA" type="circle">
+	     <reference-point>40.349722 -2.884444</reference-point>
+	     <radius>3</radius>
+	 </polygon>
+	 
+	 <polygon name="LEP141 ALMARAZ" type="circle">
+	     <reference-point>39.808889 -5.697222</reference-point>
+	     <radius>5</radius>
+	 </polygon>
+	 
+	 <polygon name="LEP142 SANTA MARÍA DE GAROÑA" type="circle">
+	     <reference-point>42.775832 -3.204167</reference-point>
+	     <radius>5</radius>
+	 </polygon>
+	 
+	 <polygon name="LEP143 CALA MAYOR" type="points">
+	     <point>39.559722 2.551944</point>
+		 <point>39.575833 2.640833</point>
+		 <point>39.547778 2.6625</point>
+		 <point>39.519167 2.583611</point>
+	 </polygon>
+	
+	<polygon name="LEP161 CENTRO DE FORMACIÓN DEL CUERPO NACIONAL DE POLICÍA" type="circle">
+	     <reference-point>40.666666 -4.652778</reference-point>
+	     <radius>1.62</radius>
+	 </polygon>
+	 
+	 <polygon name="LEP162 PALACIO REAL Y CAMPO DEL MORO" type="circle">
+	     <reference-point>40.4175 -3.716667</reference-point>
+	     <radius>0.5</radius>
+	 </polygon>
+	 
+	 <!--restricted areas -->
+	 
+	 <polygon name="GER11 MELILLA" type="circle">
+	     <reference-point>35.283332 -2.916667</reference-point>
+	     <radius>5</radius>
+	 </polygon>
+	 
+	 <polygon name="LER12 CEUTA" type="circle">
+	     <reference-point>35.899999 -5.316667</reference-point>
+	     <radius>5</radius>
+	 </polygon>
+	 
+	 <polygon name="LER30 PARQUE NATURAL DEL DELTA DEL EBRO" type="points">
+	     <point>40.833333 0.700000</point>
+		 <point>40.733333 0.933333</point>
+         <point>40.550000 0.700000</point>
+		 <point>40.533333 0.616667</point>
+         <point>40.716667 0.566667</point>
+	 </polygon>
+	 
+	 <polygon name="LER43 TORRIJOS" type="points">
+	     <point>39.884167 -4.164722</point>
+		 <point>39.837778 -4.291389</point>
+         <point>39.889722 -4.457222</point>
+		 <point>39.967222 -4.459167</point>
+         <point>40.064444 -4.315556</point>
+		 <point>39.953056 -4.103611</point>
+	 </polygon>
+	 
+	 <polygon name="LER57 LAGUNA FUENTE DE PIEDRA" type="points">
+	     <point>37.211944 -4.802778</point>
+		 <point>37.211667 -4.690278</point>
+         <point>37.032778 -4.684722</point>
+	 </polygon>
+	 
+	 <polygon name="LER72 CÁDIZ" type="points">
+	     <point>36.685278 -6.419167</point>
+		 <point>36.684722 -6.166667</point>
+         <point>36.632500 -6.136944</point>
+		 <point>36.589167 -6.061111</point>
+		 <point>36.495833 -6.038611</point>
+		 <point>36.388889 -6.040000</point>
+		 <point>36.330833 -6.161111</point>
+		 <point>36.510138 -6.309567</point>
+		 <point>36.537728 -6.330853</point>
+		 <point>36.556253 -6.268637</point>
+		 <point>36.535290 -6.235677</point>
+		 <point>36.572247 -6.230183</point>
+		 <point>36.573330 -6.268217</point>
+		 <point>36.596035 -6.284416</point>
+		 <point>36.606960 -6.317655</point>
+		 <point>36.615324 -6.391841</point>
+		 <point>36.685277 -6.419166</point>
+	 </polygon>
+	 
+	  <polygon name="LER76 EL FERROL SECTOR E" type="points">
+	     <point>43.386667 -8.223056</point>
+		 <point>43.445833 -8.247500</point>
+         <point>43.454167 -8.288889</point>
+		 <point>43.583333 -8.191667</point>
+		 <point>43.665833 -8.090556</point>
+		 <point>43.531944 -8.070833</point>
+		 <point>43.426111 -8.066111</point>
+	 </polygon>
+	 
+	 <polygon name="LER76 EL FERROL SECTOR W" type="points">
+	     <point>43.454167 -8.288889</point>
+		 <point>43.463889 -8.347778</point>
+         <point>43.583333 -8.191667</point>
+	 </polygon>
+	 
+	 <polygon name="LER77 CARTAGENA" type="points">
+	     <point>37.636667 -0.689167</point>
+		 <point>37.620987 -0.69518</point>
+		 <point>37.599773 -0.712347</point>
+		 <point>37.593789 -0.742559</point>
+		 <point>37.589708 -0.765218</point>
+		 <point>37.580730 -0.789594</point>
+		 <point>37.569846 -0.805387</point>
+		 <point>37.571207 -0.833883</point>
+		 <point>37.569302 -0.856885</point>
+		 <point>37.564948 -0.878515</point>
+		 <point>37.555694 -0.897741</point>
+		 <point>37.551067 -0.925893</point>
+		 <point>37.554606 -0.952673</point>
+		 <point>37.558688 -0.982198</point>
+		 <point>37.567397 -0.985631</point>
+		 <point>37.571751 -0.974302</point>
+		 <point>37.579370 -0.981512</point>
+		 <point>37.578281 -0.989408</point>
+		 <point>37.579642 -1.000394</point>
+		 <point>37.571479 -1.016187</point>
+		 <point>37.570662 -1.033697</point>
+		 <point>37.578554 -1.053266</point>
+		 <point>37.575288 -1.077642</point>
+		 <point>37.567397 -1.091032</point>
+		 <point>37.559312 -1.116242</point>
+		 <point>37.551895 -1.121907</point>
+		 <point>37.547540 -1.117873</point>
+		 <point>37.538489 -1.105084</point>
+		 <point>37.534745 -1.101222</point>
+		 <point>37.531478 -1.110577</point>
+		 <point>37.531342 -1.119504</point>
+		 <point>37.535766 -1.125255</point>
+		 <point>37.537059 -1.137872</point>
+		 <point>37.539237 -1.146798</point>
+		 <point>37.538216 -1.15169</point>
+		 <point>37.539305 -1.162591</point>
+		 <point>37.542980 -1.171088</point>
+		 <point>37.550833 -1.175833</point>
+		 <point>37.621111 -1.120556</point>
+         <point>37.690833 -1.071111</point>
+		 <point>37.719722 -1.040278</point>
+		 <point>37.712500 -0.995000</point>
+		 <point>37.689722 -0.963333</point>
+		 <point>37.663333 -0.902778</point>
+		 <point>37.647778 -0.867778</point>
+		 <point>37.623611 -0.777222</point>
+	 </polygon>
+	 
+	 <polygon name="LER86 BADAJOZ SECTOR A" type="points">
+		 
+		 <point>39.116666 -7.016666</point>
+		 <point>39.110861 -7.018488</point>
+		 <point>39.107997 -7.01351</point>
+		 <point>39.103242 -7.006579</point>
+		 <point>39.097980 -6.992761</point>
+		 <point>39.089520 -6.982976</point>
+		 <point>39.079086 -6.975857</point>
+		 <point>39.072823 -6.97105</point>
+		 <point>39.065493 -6.96899</point>
+		 <point>39.058295 -6.961094</point>
+		 <point>39.053896 -6.960407</point>
+		 <point>39.046820 -6.964084</point>
+		 <point>39.044621 -6.964685</point>
+		 <point>39.043487 -6.964599</point>
+		 <point>39.039921 -6.968504</point>
+		 <point>39.037688 -6.965371</point>
+		 <point>39.035841 -6.964103</point>
+		 <point>39.028057 -6.955262</point>
+		 <point>39.025566 -6.953667</point>
+		 <point>39.023649 -6.95121</point>
+		 <point>39.022019 -6.952398</point>
+		 <point>39.021102 -6.953857</point>
+		 <point>39.019835 -6.95581</point>
+		 <point>39.018185 -6.957527</point>
+		 <point>39.016184 -6.96023</point>
+		 <point>39.013867 -6.961818</point>
+		 <point>39.011541 -6.964094</point>
+		 <point>39.009457 -6.965038</point>
+		 <point>39.006839 -6.966803</point>
+		 <point>38.998299 -6.971673</point>
+		 <point>38.979219 -6.984376</point>
+		 <point>38.967664 -6.99562</point>
+		 <point>38.957342 -7.00432</point>
+		 <point>38.948310 -7.013722</point>
+		 <point>38.943387 -7.01679</point>
+		 <point>38.938380 -7.022069</point>
+		 <point>38.926896 -7.024815</point>
+		 <point>38.920219 -7.03048</point>
+		 <point>38.915006 -7.039222</point>
+		 <point>38.909195 -7.047634</point>
+		 <point>38.907192 -7.052183</point>
+		 <point>38.902516 -7.048492</point>
+		 <point>38.899577 -7.043085</point>
+		 <point>38.891924 -7.038664</point>
+		 <point>38.885377 -7.039351</point>
+		 <point>38.882304 -7.035231</point>
+		 <point>38.877092 -7.033171</point>
+		 <point>38.875622 -7.034888</point>
+		 <point>38.873350 -7.035746</point>
+		 <point>38.870811 -7.037635</point>
+		 <point>38.869073 -7.039523</point>
+		 <point>38.865598 -7.039008</point>
+		 <point>38.863593 -7.040381</point>
+		 <point>38.863460 -7.044158</point>
+		 <point>38.860653 -7.049136</point>
+		 <point>38.857311 -7.057376</point>
+		 <point>38.853702 -7.065272</point>
+		 <point>38.847686 -7.072653</point>
+		 <point>38.831774 -7.085528</point>
+		 <point>38.821210 -7.089991</point>
+		 <point>38.815458 -7.099433</point>
+		 <point>38.815993 -7.122264</point>
+		 <point>38.809306 -7.137198</point>
+		 <point>38.800526 -7.148024</point>
+		 <point>38.793703 -7.155749</point>
+		 <point>38.784471 -7.160556</point>
+		 <point>38.777914 -7.16828</point>
+		 <point>38.774702 -7.176692</point>
+		 <point>38.769349 -7.18888</point>
+		 <point>38.756365 -7.199694</point>
+		 <point>38.743647 -7.213599</point>
+		 <point>38.737354 -7.227675</point>
+		 <point>38.734006 -7.24364</point>
+		 <point>38.728784 -7.252394</point>
+		 <point>38.722088 -7.259776</point>
+		 <point>38.713516 -7.257373</point>
+		 <point>38.709765 -7.260291</point>
+		 <point>38.704005 -7.263552</point>
+		 <point>38.699852 -7.266642</point>
+		 <point>38.687794 -7.268702</point>
+		 <point>38.682836 -7.266299</point>
+		 <point>38.669702 -7.268187</point>
+		 <point>38.655360 -7.269561</point>
+		 <point>38.642490 -7.270591</point>
+		 <point>38.631763 -7.268874</point>
+		 <point>38.628008 -7.265441</point>
+		 <point>38.628544 -7.253768</point>
+		 <point>38.633333 -7.250000</point>
+		 <point>38.633333 -6.283333</point>
+		 <point>39.150000 -6.283333</point>
+		 </polygon>
+	 
+	 <polygon name="LER93 MARISMA DE HUELVA" type="points">
+	     <point>37.278333 -6.991667</point>
+		 <point>37.263333 -6.950000</point>
+         <point>37.181667 -6.958333</point>
+		 <point>37.211667 -7.021667</point>
+	 </polygon>
+	 
+	 <polygon name="LER99 AGONCILLO SECTOR A" type="points">
+	     <point>42.633056 -2.042778</point>
+		 <point>42.523889 -1.996944</point>
+         <point>42.340278 -2.118611</point>
+		 <point>42.458333 -2.287222</point>
+		 <point>42.629167 -2.346389</point>
+	 </polygon>
+	 
+	 <polygon name="LER99 AGONCILLO SECTOR B" type="points">
+	     <point>42.458333 -2.287222</point>
+		 <point>42.340278 -2.118611</point>
+         <point>42.207500 -2.209722</point>
+		 <point>42.256389 -2.624167</point>
+		 <point>42.349167 -2.383333</point>
+	 </polygon>
+	 
+	 <polygon name="LER99 AGONCILLO SECTOR C" type="points">
+	     <point>42.629167 -2.346389</point>
+		 <point>42.458333 -2.287222</point>
+         <point>42.349167 -2.383333</point>
+		 <point>42.256389 -2.624167</point>
+		 <point>42.264167 -2.767222</point>
+		 <point>42.427778 -2.737500</point>
+		 <point>42.620000 -2.514722</point>
+	 </polygon>
+	 
+	 <polygon name="LER101 AMPURDÁN N" type="points">
+	     <point>42.304722 3.111667</point>
+		 <point>42.260556 3.150278</point>
+         <point>42.248889 3.136944</point>
+		 <point>42.289444 3.082500</point>
+	 </polygon>
+	 
+	 <polygon name="R106 AMPURDÁN S" type="points">
+	     <point>42.247500 3.076944</point>
+	     <point>42.238611 3.127222</point>
+	     <point>42.236172 3.12533</point>
+	     <point>42.233884 3.124128</point>
+	     <point>42.230008 3.12121</point>
+	     <point>42.224335 3.118077</point>
+	     <point>42.220970 3.116621</point>
+	     <point>42.215673 3.114792</point>
+	     <point>42.208457 3.112903</point>
+	     <point>42.198698 3.110843</point>
+	     <point>42.190590 3.111358</point>
+	     <point>42.178029 3.111659</point>
+	     <point>42.169060 3.112431</point>
+	     <point>42.158936 3.113867</point>
+	     <point>42.147514 3.11597</point>
+	     <point>42.140418 3.119188</point>
+	     <point>42.140800 3.121634</point>
+	     <point>42.139909 3.119403</point>
+	     <point>42.138611 3.119722</point>
+	     <point>42.132778 3.103333</point>
+		 <point>42.190278 3.108889</point>
+         <point>42.177222 3.084722</point>
+		 <point>42.180556 3.062222</point>
+		 <point>42.203889 3.108889</point>
+		 <point>42.206667 3.074444</point>
+	 </polygon>
+	 
+	 <polygon name="LER110 GUADAHORTUNA" type="points">
+	     <point>37.366667 -3.700000</point>
+		 <point>37.500000 -3.650000</point>
+         <point>37.700000 -3.350000</point>
+		 <point>37.633333 -3.200000</point>
+		 <point>37.466667 -3.383333</point>
+		 <point>37.316667 -3.516667</point>
+		 <point>37.338759 -3.530728</point>
+		 <point>37.360592 -3.554074</point>
+		 <point>37.37369 -3.602139</point>
+		 <point>37.374781 -3.658444</point>
+	 </polygon>
+	 
+	 <polygon name="LER111 MOTRIL" type="points">
+	     <point>37.058333 -3.533333</point>
+		 <point>36.683333 -3.333333</point>
+         <point>36.683333 -3.566667</point>
+		 <point>37.000000 -4.000000</point>
+		 <point>37.000000 -3.670019</point>
+		 <point>37.009020 -3.610846</point>
+		 <point>37.024371 -3.577887</point>
+		 <point>37.039719 -3.550421</point>
+	 </polygon>
+	 
+	  <polygon name="LER112 PARQUE NACIONAL DE AIGÜESTORTES Y ESTANY DE SANT MAURICI" type="points">
+	     <point>42.634722 0.878611</point>
+		 <point>42.600833 1.063056</point>
+         <point>42.527500 1.079444</point>
+		 <point>42.501667 0.854722</point>
+		 <point>42.583056 0.781111</point>
+	 </polygon>
+	 
+	 
+	 <polygon name="LER112 PARQUE NACIONAL DE AIGÜESTORTES Y ESTANY DE SANT MAURICI" type="points">
+	     <point>42.634722 0.878611</point>
+		 <point>42.600833 1.063056</point>
+         <point>42.527500 1.079444</point>
+		 <point>42.501667 0.854722</point>
+		 <point>42.583056 0.781111</point>
+	 </polygon>
+	 
+	 <polygon name="LER115 PARQUE NACIONAL MARÍTIMO-TERRESTRE DEL ARCHIPIÉLAGO DE CABRERA" type="points">
+	     <point>39.165556 2.890556</point>
+		 <point>39.223889 2.965556</point>
+         <point>39.223889 2.998889</point>
+		 <point>39.107222 2.998889</point>
+		 <point>39.107222 2.890556</point>
+	 </polygon>
+	 
+	 
+	 
+	  <polygon name="LER144 PARQUE NACIONAL DE PICOS DE EUROPA" type="points">
+	     <point>43.322222 -5.122500</point>
+		 <point>43.285556 -4.616111</point>
+         <point>43.213611 -4.614167</point>
+		 <point>43.067778 -4.733056</point>
+		 <point>43.088333 -5.114444</point>
+	 </polygon>
+	 
+	 <polygon name="LER145 CALA MAYOR" type="points">
+	     <point>39.559722 2.551944</point>
+		 <point>39.575833 2.640833</point>
+         <point>39.547778 2.662500</point>
+		 <point>39.519167 2.583611</point>
+	 </polygon>
+	 
+	 <polygon name="LER146 PARQUE NACIONAL DE CABAÑEROS" type="points">
+	     <point>39.585556 -4.582222</point>
+		 <point>39.358889 -4.230278</point>
+         <point>39.277778 -4.335278</point>
+		 <point>39.316944 -4.640000</point>
+	 </polygon>
+	 
+	 <polygon name="LER147 PARQUE NACIONAL DE LAS TABLAS DE DAIMIEL" type="points">
+	     <point>39.222778 -3.622222</point>
+		 <point>39.212222 -3.611111</point>
+         <point>39.117778 -3.642222</point>
+		 <point>39.082222 -3.784722</point>
+		 <point>39.111667 -3.815000</point>
+	 </polygon>
+	 
+	 <polygon name="GCR148 PARQUE NACIONAL DE LA CALDERA DE TABURIENTE" type="points">
+	     <point>28.762778 -17.890000</point>
+		 <point>28.765556 -17.856389</point>
+         <point>28.742778 -17.833333</point>
+		 <point>28.681111 -17.831944</point>
+		 <point>28.676944 -17.892500</point>
+		 <point>28.719722 -17.909444</point>
+	 </polygon>
+	 
+	 <polygon name="GCR149 PARQUE NACIONAL DE GARAJONAY" type="points">
+	     <point>28.161944 -17.319167</point>
+		 <point>28.128056 -17.180833</point>
+         <point>28.086667 -17.226667</point>
+		 <point>28.098333 -17.267222</point>
+	 </polygon>
+	 
+	 <polygon name="GCR150 PARQUE NACIONAL DE TIMANFAYA" type="points">
+	     <point>29.065000 -13.777500</point>
+		 <point>29.001111 -13.706389</point>
+         <point>28.976389 -13.768333</point>
+		 <point>28.986111 -13.840000</point>
+		 <point>29.040000 -13.818889</point>
+	 </polygon>
+	 
+	 <polygon name="GCR151 PARQUE NACIONAL DEL TEIDE" type="points">
+	     <point>28.346667 -16.480278</point>
+		 <point>28.285556 -16.490278</point>
+         <point>28.188333 -16.604444</point>
+		 <point>28.187500 -16.679444</point>
+		 <point>28.268333 -16.735833</point>
+		 <point>28.313611 -16.656389</point>
+	 </polygon>
+	 
+	 <polygon name="LER152 PARQUE NACIONAL DE ORDESA Y MONTE PERDIDO NORTE" type="points">
+	     <point>42.705000 0.071944</point>
+		 <point>42.615556 0.164444</point>
+         <point>42.627778 -0.089722</point>
+		 <point>42.663611 -0.139444</point>
+		 <point>42.695556 -0.077500</point>
+		 <point>42.696649 -0.063325</point>
+		 <point>42.693618 -0.059414</point>
+		 <point>42.692356 -0.056496</point>
+		 <point>42.692482 -0.054092</point>
+		 <point>42.694501 -0.048942</point>
+		 <point>42.691852 -0.043363</point>
+		 <point>42.691978 -0.039329</point>
+		 <point>42.691031 -0.032377</point>
+		 <point>42.688085 -0.02689</point>
+		 <point>42.688054 -0.025259</point>
+		 <point>42.686003 -0.01732</point>
+		 <point>42.685278 -0.01629</point>
+		 <point>42.684899 -0.00878</point>
+		 <point>42.685026 -0.003544</point>
+		 <point>42.685562 -0.001484</point>
+		 <point>42.685593 0.001048</point>
+		 <point>42.687076 0.002851</point>
+		 <point>42.687486 0.004739</point>
+		 <point>42.688306 0.004395</point>
+		 <point>42.689095 0.00491</point>
+		 <point>42.689032 0.006413</point>
+		 <point>42.690231 0.007786</point>
+		 <point>42.690798 0.010232</point>
+		 <point>42.69247 0.011305</point>
+		 <point>42.693006 0.011648</point>
+		 <point>42.693543 0.013751</point>
+		 <point>42.694993 0.015038</point>
+		 <point>42.700198 0.015382</point>
+		 <point>42.701365 0.014438</point>
+		 <point>42.701869 0.014953</point>
+		 <point>42.701775 0.018729</point>
+		 <point>42.702468 0.021433</point>
+		 <point>42.702595 0.023793</point>
+		 <point>42.701806 0.026368</point>
+		 <point>42.701932 0.027656</point>
+		 <point>42.700342 0.032806</point>
+		 <point>42.698951 0.038262</point>
+		 <point>42.697594 0.041052</point>
+		 <point>42.697468 0.044442</point>
+		 <point>42.696049 0.048047</point>
+		 <point>42.696207 0.048862</point>
+		 <point>42.696301 0.049892</point>
+		 <point>42.698131 0.051866</point>
+		 <point>42.698478 0.05427</point>
+		 <point>42.697689 0.058475</point>
+		 <point>42.699298 0.06178</point>
+		 <point>42.700591 0.062724</point>
+		 <point>42.702231 0.067273</point>
+		 <point>42.702798 0.067788</point>
+	 </polygon>
+	 
+	 <polygon name="LER153 PARQUE NACIONAL DE ORDESA Y MONTE PERDIDO SUR" type="points">
+	     <point>42.615556 0.164444</point>
+		 <point>42.578333 0.100556</point>
+         <point>42.491389 0.117500</point>
+		 <point>42.627778 -0.089722</point>
+	 </polygon>
+	 
+	 <polygon name="LER154 PARQUE NACIONAL DE DOÑANA" type="points">
+	     <point>37.175000 -6.622222</point>
+		 <point>37.248611 -6.301389</point>
+         <point>37.131944 -6.179167</point>
+		 <point>36.865278 -6.176389</point>
+		 <point>36.728889 -6.420833</point>
+		 <point>36.999444 -6.565278</point>
+	 </polygon>
+	 
+	 <polygon name="LER155 PARQUE NACIONAL DE SIERRA NEVADA OESTE" type="points">
+	     <point>37.218333 -3.241944</point>
+		 <point>37.148611 -3.099722</point>
+         <point>37.030000 -3.099722</point>
+		 <point>36.979167 -3.197778</point>
+		 <point>36.937222 -3.460278</point>
+		 <point>37.048333 -3.513056</point>
+		 <point>37.149167 -3.408056</point>
+		 <point>37.140000 -3.353333</point>
+	 </polygon>
+	 
+	 <polygon name="LER156 PARQUE NACIONAL DE SIERRA NEVADA ESTE" type="points">
+	     <point>37.148611 -3.099722</point>
+		 <point>37.158611 -3.025556</point>
+         <point>37.115000 -2.669167</point>
+		 <point>37.053889 -2.676111</point>
+		 <point>37.030000 -3.099722</point>
+	 </polygon>
+	 
+	 <polygon name="LER157 PARQUE NACIONAL MARÍTIMO-TERRESTRE DE LAS ISLAS ATLÁNTICAS. ISLAS DE CORTEGADA, MALVEIRAS Y OTRAS" type="points">
+	     <point>42.626111 -8.778889</point>
+		 <point>42.620278 -8.775556</point>
+         <point>42.611667 -8.785556</point>
+		 <point>42.609167 -8.802500</point>
+		 <point>42.616111 -8.804722</point>
+	 </polygon>
+	 
+	 <polygon name="LER158 PARQUE NACIONAL MARÍTIMO-TERRESTRE DE LAS ISLAS ATLÁNTICAS. ISLA DE SÁLVORA Y OTROS ISLOTES" type="points">
+	     <point>42.517222 -9.064722</point>
+		 <point>42.504722 -8.981944</point>
+         <point>42.440556 -9.006944</point>
+	 </polygon>
+	 
+	 <polygon name="LER159 PARQUE NACIONAL MARÍTIMO-TERRESTRE DE LAS ISLAS ATLÁNTICAS. ISLA DE ONS Y ONZA" type="points">
+	     <point>42.409167 -8.937778</point>
+		 <point>42.406389 -8.917778</point>
+         <point>42.391389 -8.905833</point>
+		 <point>42.339167 -8.925556</point>
+		 <point>42.324167 -8.952222</point>
+		 <point>42.374167 -8.960833</point>
+	 </polygon>
+	 
+	 <polygon name="LER160 PARQUE NACIONAL MARÍTIMO-TERRESTRE DE LAS ISLAS ATLÁNTICAS. ISLAS CÍES" type="points">
+	     <point>42.259167 -8.931111</point>
+		 <point>42.251111 -8.893333</point>
+         <point>42.188056 -8.870833</point>
+		 <point>42.166111 -8.915833</point>
+	 </polygon>
+	 
+	  <polygon name="LER164 ALGECIRAS" type="points">
+	     <point>36.443611 -5.272222</point>
+		 <point>36.416667 -5.154444</point>
+         <point>36.374444 -5.1186113</point>
+		 <point>36.181667 -5.269444</point>
+		 <point>36.149167 -5.276667</point>
+		 <point>36.153889 -5.337778</point>
+		 <point>36.152778 -5.339167</point>
+		 <point>36.155000 -5.345556</point>
+		 <point>36.155000 -5.351667</point>
+		 <point>36.154722 -5.352222</point>
+		 <point>36.156111 -5.350556</point>
+		 <point>36.156111 -5.401944</point>
+		 <point>36.094444 -5.384167</point>
+		 <point>36.079167 -5.384167</point>
+		 <point>36.040556 -5.409167</point>
+		 <point>36.026189 -5.438275</point>
+		 <point>36.017304 -5.478101</point>
+		 <point>36.000363 -5.531659</point>
+		 <point>35.978973 -5.578694</point>
+		 <point>35.976472 -5.610966</point>
+		 <point>35.979806 -5.633626</point>
+		 <point>35.996752 -5.645642</point>
+		 <point>36.012583 -5.666241</point>
+		 <point>36.023889 -5.690000</point>
+		 <point>36.056111 -5.664722</point>
+		 <point>36.205556 -5.658333</point>
+	 </polygon>
+	 
+	 <!-- danger zones-->
+	 
+	 <polygon name="LED1 CERRO MURIANO" type="points">
+	     <point>38.066667 -4.850000</point>
+		 <point>38.083333 -4.800000</point>
+         <point>38.050000 -4.700000</point>
+		 <point>38.000000 -4.766667</point>
+	 </polygon>
+	 
+	 <polygon name="LED2 EL TELENO" type="points">
+	     <point>42.346944 -6.392222</point>
+		 <point>42.466667 -6.183333</point>
+         <point>42.383333 -6.033333</point>
+		 <point>42.299722 -6.282222</point>
+	 </polygon>
+	 
+	 <polygon name="GCD3 PÁJARA" type="points">
+	     <point>28.347222 -14.216667</point>
+		 <point>28.347222 -14.155556</point>
+         <point>28.255556 -14.155556</point>
+		 <point>28.238889 -14.216667</point>
+	 </polygon>
+	 
+	 <polygon name="LED4 ALIJARES" type="points">
+	     <point>39.866667 -4.016667</point>
+		 <point>39.866667 -3.983333</point>
+         <point>39.816667 -3.983333</point>
+		 <point>39.816667 -4.016667</point>
+	 </polygon>
+	 
+	 <polygon name="LED6 BATERÍAS" type="points">
+	     <point>40.866667 -4.033333</point>
+		 <point>40.866667 -4.116667</point>
+         <point>40.933333 -4.116667</point>
+		 <point>40.933333 -4.033333</point>
+	 </polygon>
+	 
+	 <polygon name="LED7 EL FERRAL DE BERNESGA" type="points">
+	     <point>42.666667 -5.750000</point>
+		 <point>42.666667 -5.683333</point>
+         <point>42.600000 -5.666667</point>
+		 <point>42.600000 -5.750000</point>
+	 </polygon>
+	 
+	 <polygon name="LED8 JAIZQUIBEL" type="points">
+	     <point>43.333333 -1.850000</point>
+		 <point>43.333333 -1.883333</point>
+         <point>43.350000 -1.883333</point>
+		 <point>43.350000 -1.850000</point>
+	 </polygon>
+	 
+	 <polygon name="LED10 CASTRILLO DEL VAL" type="points">
+	     <point>42.383333 -3.560278</point>
+		 <point>42.383333 -3.409167</point>
+         <point>42.316111 -3.409444</point>
+		 <point>42.316667 -3.559167</point>
+	 </polygon>
+	 
+	 <polygon name="LED14 RENEDO DE ESGUEVAS" type="points">
+	     <point>41.731667 -4.620278</point>
+		 <point>41.732500 -4.555556</point>
+         <point>41.715556 -4.555278</point>
+		 <point>41.714722 -4.619722</point>
+	 </polygon>
+	 
+	 <polygon name="GCD15 MONTAÑA BERMEJA" type="points">
+	     <point>28.966667 -13.826667</point>
+		 <point>28.966667 -13.793333</point>
+         <point>28.953333 -13.793333</point>
+		 <point>28.953333 -13.826667</point>
+	 </polygon>
+	 
+	 <polygon name="LED17 COLMENAR VIEJO SECTOR A" type="points">
+	     <point>40.964722 -3.308889</point>
+		 <point>40.658889 -3.765278</point>
+         <point>40.528333 -4.226389</point>
+		 <point>40.500000 -4.236111</point>
+		 <point>40.474167 -4.120833</point>
+		 <point>40.488889 -4.011944</point>
+		 <point>40.576667 -4.013056</point>
+		 <point>40.560278 -3.779722</point>
+		 <point>40.796667 -3.343889</point>
+	 </polygon>
+	 
+	 <polygon name="LED17 COLMENAR VIEJO SECTOR B" type="points">
+	     <point>41.006389 -3.300278</point>
+		 <point>41.000833 -3.387778</point>
+         <point>40.586389 -4.196389</point>
+		 <point>40.528333 -4.226389</point>
+		 <point>40.658889 -3.765278</point>
+		 <point>40.964722 -3.308889</point>
+	 </polygon>
+	 
+	  <polygon name="LED17 COLMENAR VIEJO SECTOR C" type="points">
+	     <point>41.000833 -3.387778</point>
+		 <point>40.995833 -3.633056</point>
+         <point>40.954444 -3.790278</point>
+		 <point>40.709444 -4.133611</point>
+		 <point>40.586389 -4.1963899</point>
+		 <point>41.006389 -3.300278</point>
+	 </polygon>
+	 
+	 <polygon name="GCD20 BRIDA SECTOR A" type="points">
+	     <point>27.500000 -16.000000</point>
+		 <point>27.500000 -15.500000</point>
+         <point>27.333333 -15.500000</point>
+		 <point>27.333333 -16.000000</point>
+	 </polygon>
+	 
+	 <polygon name="GCD20 BRIDA SECTOR B" type="points">
+	     <point>27.333333 -15.835278</point>
+		 <point>26.823056 -16.154722</point>
+         <point>26.719167 -16.127778</point>
+		 <point>26.583611 -15.700278</point>
+		 <point>27.331944 -15.612500</point>
+	 </polygon>
+	 
+	 <polygon name="LED21B I. COLUMBRETES INFERIOR" type="points">
+	     <point>40.443889 1.136111</point>
+		 <point>39.890278 1.178889</point>
+         <point>39.822778 0.169444</point>
+	 </polygon>
+	 
+	 <polygon name="LED22 MAZARRÓN" type="points">
+	     <point>37.216667 -1.250000</point>
+		 <point>37.216667 -0.750000</point>
+         <point>36.933333 -0.750000</point>
+		 <point>36.933333 -1.250000</point>
+	 </polygon>
+	 
+	  <polygon name="GCD23 MORISCOS" type="points">
+	     <point>28.425000 -16.273611</point>
+		 <point>28.316667 -16.168056</point>
+         <point>28.294444 -16.254167</point>
+	 </polygon>
+	 
+	 <polygon name="LED25 ALMAGRO" type="points">
+	     <point>39.122222 -3.903889</point>
+		 <point>39.018889 -3.817778</point>
+         <point>38.991667 -3.911111</point>
+		 <point>39.061111 -3.927778</point>
+	 </polygon>
+	 
+	 <polygon name="LED26 ALICANTE ESTE" type="points">
+	     <point>36.923333 0.101389</point>
+		 <point>37.870833 0.109167</point>
+         <point>38.509722 0.513333</point>
+		 <point>38.591667 0.773333</point>
+		 <point>38.591667 1.110556</point>
+		 <point>38.216111 1.856667</point>
+		 <point>37.726111 2.122500</point>
+	 </polygon>
+	 
+	 <polygon name="LED27 EL COPERO SECTOR A" type="points">
+	     <point>37.300000 -6.300000</point>
+		 <point>37.286111 -5.950000</point>
+         <point>37.200000 -5.950000</point>
+		 <point>37.200000 -6.116667</point>
+		 <point>37.250000 -6.300000</point>
+	 </polygon>
+	 
+	 <polygon name="LED27 EL COPERO SECTOR B" type="points">
+		 <point>37.286111 -5.950000</point>
+		 <point>37.277778 -5.933333</point>
+		 <point>37.271817 -5.930355</point>
+		 <point>37.265533 -5.924776</point>
+		 <point>37.258250 -5.918276</point>
+		 <point>37.253946 -5.914071</point>
+		 <point>37.250365 -5.911346</point>
+		 <point>37.245945 -5.910455</point>
+		 <point>37.234119 -5.911293</point>
+		 <point>37.228140 -5.910606</point>
+		 <point>37.210916 -5.909147</point>
+		 <point>37.196970 -5.910349</point>
+		 <point>37.186375 -5.911014</point>
+		 <point>37.176459 -5.909812</point>
+		 <point>37.163054 -5.907752</point>
+		 <point>37.150000 -5.900000</point>
+		 <point>37.200000 -6.066667</point>
+		 <point>37.200000 -5.950000</point>
+	 </polygon>
+	 
+	 <polygon name="GCD29 S. ANDRÉS" type="points">
+	     <point>28.500000 -16.170833</point>
+		 <point>28.516667 -16.100000</point>
+         <point>28.433333 -16.084722</point>
+	 </polygon>
+	 
+	  <polygon name="LED35 CHINCHILLA SECTOR A" type="points">
+	     <point>39.072222 -1.639167</point>
+		 <point>39.056667 -1.568889</point>
+         <point>39.047500 -1.615833</point>
+		 <point>39.016667 -1.615833</point>
+		 <point>38.985000 -1.600000</point>
+		 <point>38.991667 -1.500000</point>
+		 <point>39.027778 -1.441667</point>
+		 <point>38.987500 -1.433611</point>
+		 <point>38.981944 -1.500556</point>
+		 <point>38.935000 -1.657222</point>
+		 <point>38.940000 -1.739444</point>
+		 <point>38.991944 -1.734722</point>
+		 <point>39.040833 -1.704444</point>
+	 </polygon>
+	 
+	 <polygon name="LED35 CHINCHILLA SECTOR B" type="points">
+	     <point>39.056667 -1.568889</point>
+		 <point>39.048056 -1.453611</point>
+         <point>39.027778 -1.441667</point>
+		 <point>38.991667 -1.50000</point>
+		 <point>38.985000 -1.600000</point>
+		 <point>39.016667 -1.615833</point>
+		 <point>39.047500 -1.615833</point>
+	 </polygon>
+	 
+	 <polygon name="LED36 ÁLVAREZ SOTOMAYOR" type="points">
+	     <point>37.021111 -2.374722</point>
+		 <point>36.970000 -2.331944</point>
+         <point>36.884722 -2.363611</point>
+		 <point>36.876389 -2.387778</point>
+		 <point>36.897222 -2.429722</point>
+	 </polygon>
+	 
+	 <polygon name="LED38 ZAOREJAS" type="circle">
+	     <reference-point>40.716667 -2.2</reference-point>
+	     <radius>1</radius>
+	 </polygon>
+	 
+	 <polygon name="LED40 ALPEDRETE DE LA SIERRA" type="points">
+	     <point>41.000000 -3.466667</point>
+		 <point>40.850000 -3.450000</point>
+         <point>41.000000 -3.250000</point>
+	 </polygon>
+	 
+	 <polygon name="LED41 CASAS DE UCEDA" type="points">
+	     <point>41.000000 -3.583333</point>
+		 <point>41.000000 -3.466667</point>
+         <point>40.850000 -3.450000</point>
+		 <point>41.000000 -3.250000</point>
+		 <point>41.000000 -3.183333</point>
+		 <point>40.916667 -3.183333</point>
+		 <point>40.750000 -3.500000</point>
+		 <point>40.750000 -3.583333</point>
+	 </polygon>
+	 
+	 <polygon name="LED45 MANRESA" type="points">
+	     <point>41.800000 1.850000</point>
+		 <point>41.800000 1.916667</point>
+         <point>41.733333 1.916667</point>
+		 <point>41.733333 1.850000</point>
+	 </polygon>
+	 
+	 <polygon name="LED46 SABADELL" type="points">
+	     <point>41.550000 2.050000</point>
+		 <point>41.550000 2.116667</point>
+         <point>41.483333 2.116667</point>
+		 <point>41.483333 2.050000</point>
+	 </polygon>
+	 
+	 <polygon name="LED48 SANCHIDRIÁN" type="circle">
+	     <reference-point>40.900556 -4.609444</reference-point>
+	     <radius>1.6</radius>
+	 </polygon>
+	 
+	 <polygon name="LED50 BARDENAS" type="points">
+	     <point>42.033333 -1.366667</point>
+		 <point>42.183333 -1.166667</point>
+         <point>42.525000 -1.650000</point>
+		 <point>42.333333 -1.800000</point>
+	 </polygon>
+	 
+	 <polygon name="GCD51 PANTERA" type="points">
+	     <point>27.930556 -15.362222</point>
+		 <point>27.995556 -15.277778</point>
+         <point>27.870278 -15.272222</point>
+	 </polygon>
+	 
+	 <polygon name="GCD53 GACELA" type="points">
+	     <point>28.168889 -15.406111</point>
+		 <point>28.277500 -15.324167</point>
+         <point>28.277500 -15.527222</point>
+	 </polygon>
+	 
+	 <polygon name="GCD54 JIRAFA" type="points">
+	     <point>28.168889 -15.419444</point>
+		 <point>28.205000 -15.318333</point>
+         <point>28.091667 -15.335556</point>
+		 <point>28.160833 -15.419444</point>
+	 </polygon>
+	 
+	 <polygon name="LED56 ESTEPONA S." type="circle">
+	     <reference-point>36.257778 -4.991944</reference-point>
+	     <radius>5</radius>
+	 </polygon>
+	 
+	 <polygon name="GCD54 JIRAFA" type="points">
+	     <point>40.625833 -3.948333</point>
+		 <point>40.694444 -3.948333</point>
+         <point>40.694444 -3.853889</point>
+		 <point>40.625833 -3.853889</point>
+	 </polygon>
+	 
+	 <polygon name="LED65 MARINES" type="points">
+	     <point>39.783333 -0.600000</point>
+		 <point>39.783333 -0.516667</point>
+         <point>39.683333 -0.516667</point>
+		 <point>39.683333 -0.600000</point>
+	 </polygon>
+	 
+	 <polygon name="LED66 AGOST" type="points">
+	     <point>38.500000 -0.733333</point>
+		 <point>38.500000 -0.633333</point>
+         <point>38.416667 -0.633333</point>
+		 <point>38.416667 -0.733333</point>
+	 </polygon>
+	 
+	 <polygon name="LED67 SAN CLEMENTE SASEBAS" type="points">
+	     <point>42.443889 2.945278</point>
+		 <point>42.442778 3.012500</point>
+         <point>42.338889 3.012500</point>
+		 <point>42.338333 2.945278</point>
+	 </polygon>
+	 
+	 <polygon name="LED69 GRIÑÓN" type="circle">
+	     <reference-point>40.183333 -3.866667</reference-point>
+	     <radius>1.62</radius>
+	 </polygon>
+	 
+	 <polygon name="LED70 SAN GREGORIO SECTOR A" type="points">
+	     <point>41.934722 -0.950000</point>
+		 <point>41.846389 -0.893333</point>
+         <point>41.780556 -0.889444</point>
+		 <point>41.728889 -0.851389</point>
+		 <point>41.691667 -0.881389</point>
+		 <point>41.813056 -1.134444</point>
+		 <point>41.865000 -1.138333</point>
+		 <point>41.915556 -1.042778</point>
+	 </polygon>
+	 
+	 <polygon name="LED70 SAN GREGORIO SECTOR B" type="points">
+	     <point>41.889444 -0.920833</point>
+		 <point>41.846389 -0.893333</point>
+         <point>41.780556 -0.889444</point>
+		 <point>41.747222 -0.871111</point>
+		 <point>41.706111 -0.914167</point>
+		 <point>41.786944 -1.074444</point>
+		 <point>41.858889 -1.072222</point>
+		 <point>41.902778 -1.010556</point>
+	 </polygon>
+	 
+	 <polygon name="LED70 SAN GREGORIO SECTOR C" type="points">
+	     <point>41.895278 -0.956667</point>
+		 <point>41.747222 -0.871111</point>
+         <point>41.711944 -0.908333</point>
+		 <point>41.817500 -1.073611</point>
+	 </polygon>
+	 
+	 <polygon name="GCD74 EL SOCORRO" type="points">
+	     <point>28.351667 -16.383333</point>
+		 <point>28.266667 -16.383333</point>
+         <point>28.255556 -16.250000</point>
+		 <point>28.338889 -16.250000</point>
+	 </polygon>
+	 
+	 <polygon name="GCD75 LA ISLETA" type="points">
+	     <point>28.158333 -15.400000</point>
+		 <point>28.158333 -15.433333</point>
+         <point>28.183333 -15.433333</point>
+		 <point>28.183333 -15.400000</point>
+	 </polygon>
+	 
+	 <polygon name="GCD78 MASPALOMAS" type="points">
+	     <point>27.766667 -15.550000</point>
+		 <point>27.766667 -15.600000</point>
+         <point>27.716667 -15.600000</point>
+		 <point>27.716667 -15.550000</point>
+	 </polygon>
+	 
+	 <polygon name="LED80 GABEIRAS" type="points">
+	     <point>43.483333 -8.283333</point>
+		 <point>43.483333 -8.333333</point>
+         <point>43.500000 -8.333333</point>
+		 <point>43.500000 -8.283333</point>
+	 </polygon>
+	 
+	 <polygon name="LED81 SISARGAS" type="points">
+	     <point>43.466667 -8.450000</point>
+		 <point>43.466667 -8.950000</point>
+         <point>43.766667 -8.950000</point>
+		 <point>43.766667 -8.450000</point>
+	 </polygon>
+	 
+	 <polygon name="LED82 ONS" type="points">
+	     <point>42.166667 -9.166667</point>
+		 <point>42.166667 -9.666667</point>
+         <point>42.500000 -9.666667</point>
+		 <point>42.500000 -9.166667</point>
+	 </polygon>
+	 
+	 <polygon name="LED83 STA. CRUZ DE PARGA" type="points">
+	     <point>43.250000 -7.833333</point>
+		 <point>43.250000 -7.766667</point>
+		 <point>43.183333 -7.766667</point>
+         <point>43.183333 -7.833333</point>
+	 </polygon>
+	 
+	 <polygon name="LED87 GALÁPAGOS" type="circle">
+	     <reference-point>40.714722 -3.3425</reference-point>
+	     <radius>0.54</radius>
+	 </polygon>
+	 
+	 <polygon name="LED90 GOLFO DE CÁDIZ SECTOR A" type="points">
+	     <point>36.433333 -6.583333</point>
+		 <point>36.455556 -6.548333</point>
+		 <point>35.979722 -6.363611</point>
+         <point>35.979722 -6.683333</point>
+	 </polygon>
+	 
+	 <polygon name="LED90 GOLFO DE CÁDIZ SECTOR B" type="points">
+	     <point>35.979722 -6.363611</point>
+		 <point>36.227222 -6.459444</point>
+		 <point>36.459722 -6.248611</point>
+	 </polygon>
+	 
+	  <polygon name="LED90 GOLFO DE CÁDIZ SECTOR C" type="points">
+	     <point>36.459722 -6.248611</point>
+		 <point>35.979722 -6.363611</point>
+		 <point>36.455556 -6.548333</point>
+		 <point>36.483333 -6.500000</point>
+		 <point>36.484444 -6.419722</point>
+	 </polygon>
+	 
+	 <polygon name="LED94 SANTORCAZ" type="circle">
+	     <reference-point>40.463333 -3.218611</reference-point>
+	     <radius>1.62</radius>
+	 </polygon>
+	 
+	 <polygon name="LED96 ALCANTARILLA" type="circle">
+	     <reference-point>37.9525 -1.230833</reference-point>
+	     <radius>2.7</radius>
+	 </polygon>
+	 
+	 <polygon name="LED100 ROTA HEL" type="points">
+	     <point>36.712778 -6.440000</point>
+		 <point>36.758333 -6.383333</point>
+		 <point>36.866667 -6.175000</point>
+		 <point>36.684722 -6.137778</point>
+		 <point>36.685278 -6.419167</point>
+	 </polygon>
+	 
+	 <polygon name="LED107 ABLITAS" type="circle">
+	     <reference-point>42.083333 -1.621111</reference-point>
+	     <radius>5</radius>
+	 </polygon>
+	 
+	 <polygon name="LED108 CASTELLÓN" type="circle">
+	     <reference-point>39.994444 0.016666</reference-point>
+	     <radius>1.62</radius>
+	 </polygon>
+	 
+	 <polygon name="LED109 GRANADA AD polygon" type="points">
+	     <point>37.248611 -4.174167</point>
+		 <point>37.250000 -4.000000</point>
+		 <point>37.210000 -3.910278</point>
+		 <point>37.149444 -3.903611</point>
+		 <point>37.133333 -4.000000</point>
+		 <point>37.133333 -4.117500</point>
+	 </polygon>
+	 
+	  <polygon name="LED109 GRANADA AD circle" type="circle">
+	     <reference-point>37.188611 -3.777222</reference-point>
+	     <radius>6.5</radius>
+	 </polygon>
+	 <polygon name="LED120 ARENOSILLO NORTE INFERIOR ESTE" type="points">
+	     <point>37.150000 -6.750000</point>
+		 <point>36.947222 -6.569444</point>
+		 <point>36.842500 -6.717500</point>
+		 <point>37.093611 -7.026944</point>
+	 </polygon>
+	 
+	 <polygon name="LED121 ARENOSILLO NORTE INFERIOR OESTE" type="points">
+	     <point>37.093611 -7.026944</point>
+		 <point>36.842500 -6.717500</point>
+		 <point>36.333333 -7.358333</point>
+		 <point>37.041667 -7.3583334</point>
+	 </polygon>
+	 
+	 <polygon name="LED122 ARENOSILLO SUR" type="points">
+	     <point>36.333333 -7.358333</point>
+		 <point>36.225000 -6.633333</point>
+		 <point>35.858333 -6.708333</point>
+		 <point>35.950000 -7.358333</point>
+	 </polygon>
+	 
+	 <polygon name="LED129 ARENOSILLO CENTRO" type="points">
+	     <point>36.838889 -6.717222</point>
+		 <point>36.238333 -6.717222</point>
+		 <point>36.333333 -7.355000</point>
+	 </polygon>
+	 
+	 <polygon name="LED130 CALATRAVA" type="circle">
+	     <reference-point>38.953333 -3.741388</reference-point>
+	     <radius>15</radius>
+	 </polygon>
+	 
+	 <polygon name="LED131 P. ALARCÓN INFERIOR" type="points">
+	     <point>40.000000 -2.366667</point>
+		 <point>40.000000 -1.916667</point>
+		 <point>39.783333 -1.416667</point>
+		 <point>39.050000 -1.400000</point>
+		 <point>39.500000 -1.833333</point>
+		 <point>39.500000 -2.800000</point>
+	 </polygon>
+	 
+	 <polygon name="LED133 ROBLEDO DE CHAVELA" type="circle">
+	     <reference-point>40.431111 -4.248055</reference-point>
+	     <radius>1</radius>
+	 </polygon>
+	 
+	 <polygon name="LED134 AMPURIABRAVA" type="circle">
+	     <reference-point>42.26 3.11</reference-point>
+	     <radius>4</radius>
+	 </polygon>
+	 
+	 <polygon name="LED165 ALBORÁN INFERIOR" type="points">
+	     <point>36.204444 -4.643056</point>
+		 <point>36.183333 -3.866667</point>
+		 <point>36.545833 -3.867778</point>
+		 <point>36.183333 -2.033333</point>
+		 <point>35.833333 -2.116667</point>
+		 <point>35.833333 -4.900000</point>
+	 </polygon>
+	 
+	 <!-- sensitive and natural areas -->
+	
+     <polygon name="LAGUNA DE GOSQUE" type="points">
+	      <point>37.133056 -4.954444</point>
+		  <point>37.133333 -4.941944</point>
+		  <point>37.125278 -4.941667</point>
+		  <point>37.125000 -4.954167</point>
+	 </polygon>
+	 
+	 <polygon name="HOYA DE LA BALLESTERA" type="points">
+	      <point>37.374444 -5.183056</point>
+		  <point>37.366389 -5.117222</point>
+		  <point>37.361944 -5.117222</point>
+		  <point>37.361944 -5.123611</point>
+		  <point>37.365278 -5.182778</point>
+	 </polygon>
+	 
+	 <polygon name="DEHESA DE ABAJO" type="points">
+	      <point>37.224167 -6.190833</point>
+		  <point>37.214444 -6.164167</point>
+		  <point>37.206389 -6.163889</point>
+		  <point>37.195278 -6.194722</point>
+	 </polygon>
+	 
+	 <polygon name="LAGUNA DEL CHARROAO" type="points">
+	      <point>36.942500 -5.908333</point>
+		  <point>36.942500 -5.901389</point>
+		  <point>36.923056 -5.883889</point>
+		  <point>36.916944 -5.883611</point>
+		  <point>36.902222 -5.894444</point>
+		  <point>36.901944 -5.901111</point>
+		  <point>36.936111 -5.908056</point>
+	 </polygon>
+	 
+	 <polygon name="PUNTA CARREIRÓN" type="points">
+	      <point>42.538889 -8.858333</point>
+		  <point>42.522222 -8.858333</point>
+		  <point>42.522222 -8.886111</point>
+		  <point>42.538889 -8.886111</point>
+	 </polygon>
+	 
+	 <polygon name="LAGOA A BODEIRA" type="points">
+	      <point>42.483333 -8.900000</point>
+		  <point>42.475000 -8.900000</point>
+		  <point>42.475000 -8.916667</point>
+		  <point>42.483333 -8.916667</point>
+	 </polygon>
+	 
+	 <polygon name="UMIA-GROVE-A LANZADA" type="points">
+	      <point>42.509722 -8.818056</point>
+		  <point>42.500000 -8.8013890</point>
+		  <point>42.450000 -8.811111</point>
+		  <point>42.430556 -8.872222</point>
+		  <point>42.458333 -8.883333</point>
+		  <point>42.488889 -8.855556</point>
+		  <point>42.502778 -8.840278</point>
+	 </polygon>
+	 
+	 <polygon name="LAGUNA DE SALINA GRANDE" type="circle">
+	     <reference-point>41.833333 -5.600000</reference-point>
+	     <radius>4</radius>
+	 </polygon>
+	 
+	  <polygon name="SIERRAS DE SAN JUAN DE LA PEÑA Y CÚCULO" type="points">
+	      <point>42.536111 -0.737500</point>
+		  <point>42.536111 -0.688889</point>
+		  <point>42.500000 -0.688889</point>
+		  <point>42.500000 -0.737500</point>
+	 </polygon>
+	 
+	 <polygon name="PARQUE NATURAL DE LA ALBUFERA SECTOR A" type="points">
+	      <point>39.257778 -0.323889</point>
+		  <point>39.257500 -0.312500</point>
+		  <point>39.239444 -0.313056</point>
+		  <point>39.239722 -0.324722</point>
+	 </polygon>
+	 
+	 <polygon name="PARQUE NATURAL DE LA ALBUFERA SECTOR B" type="points">
+	      <point>39.366389 -0.354722</point>
+		  <point>39.365556 -0.316111</point>
+		  <point>39.301944 -0.287500</point>
+		  <point>39.304167 -0.380278</point>
+		  <point>39.322500 -0.402778</point>
+		  <point>39.349722 -0.401667</point>
+	 </polygon>
+	 
+	 <polygon name="PARQUE NATURAL DE LA ALBUFERA SECTOR C" type="points">
+	      <point>39.284722 -0.322778</point>
+		  <point>39.283611 -0.276667</point>
+		  <point>39.192500 -0.233889</point>
+		  <point>39.183611 -0.234167</point>
+		  <point>39.185000 -0.291944</point>
+		  <point>39.239722 -0.324722</point>
+	 </polygon>
+	 
+	 <polygon name="PARQUE NATURAL DE LA ALBUFERA SECTOR D" type="points">
+	      <point>39.385556 -0.400278</point>
+		  <point>39.384444 -0.353889</point>
+		  <point>39.366389 -0.354722</point>
+		  <point>39.365556 -0.316111</point>
+		  <point>39.301944 -0.287500</point>
+		  <point>39.304167 -0.380278</point>
+		  <point>39.322500 -0.402778</point>
+		  <point>39.349722 -0.401667</point>
+	 </polygon>
+	 
+	  <polygon name="PARQUE NATURAL DESA DRAGONERA" type="points">
+	      <point>39.576111 2.349444</point>
+		  <point>39.568889 2.307778</point>
+		  <point>39.570278 2.296944</point>
+		  <point>39.586667 2.305556</point>
+		  <point>39.602778 2.337500</point>
+		  <point>39.596389 2.349167</point>
+		  <point>39.586667 2.345278</point>
+	 </polygon>
+	 
+	 <polygon name="ÁREA DE RECUPERACIÓN DEL OSO PARDO" type="points">
+	      <point>43.153333 -4.663611</point>
+		  <point>43.155556 -4.275000</point>
+		  <point>42.945278 -4.143056</point>
+		  <point>42.955556 -4.338889</point>
+		  <point>43.024444 -4.404167</point>
+		  <point>43.006667 -4.736111</point>
+		  <point>43.071667 -4.803333</point>
+		  <point>43.067778 -4.733056</point>
+	 </polygon>
+	 
+	 <polygon name="RESERVA NATURAL DE LAS LAGUNAS DE PUEBLA DE BELEÑA" type="points">
+	      <point>40.898333 -3.241944</point>
+		  <point>40.893333 -3.260833</point>
+		  <point>40.885556 -3.263056</point>
+		  <point>40.877500 -3.257222</point>
+		  <point>40.884167 -3.236667</point>
+	 </polygon>
+	 
+	 <polygon name="RESERVA NATURAL DE LA LAGUNA DE LOS OJOS DE VILLAVERDE" type="points">
+	      <point>38.795000 -2.386111</point>
+		  <point>38.821944 -2.386111</point>
+		  <point>38.821944 -2.351389</point>
+		  <point>38.794722 -2.351667</point>
+	 </polygon>
+	 
+	 <polygon name="PARQUE NATURAL DE PEÑALARA" type="points">
+	      <point>40.944722 -3.914444</point>
+		  <point>40.886667 -3.886944</point>
+		  <point>40.821667 -3.830000</point>
+		  <point>40.800278 -3.982778</point>
+	 </polygon>
+	 
+	 <polygon name="LAGUNAS DE VILLAFRANCA DE LOS CABALLEROS Y QUERO, SECTOR A" type="points">
+	      <point>39.719722 -3.344167</point>
+		  <point>39.718889 -3.323889</point>
+		  <point>39.716667 -3.316111</point>
+		  <point>39.709444 -3.294167</point>
+		  <point>39.697222 -3.283333</point>
+		  <point>39.654722 -3.283333</point>
+		  <point>39.654722 -3.300000</point>
+		  <point>39.686389 -3.343889</point>
+	 </polygon>
+	 
+	 <polygon name="LAGUNAS DE VILLAFRANCA DE LOS CABALLEROS Y QUERO, SECTOR B" type="points">
+	      <point>39.510000 -3.277778</point>
+		  <point>39.510000 -3.243333</point>
+		  <point>39.481111 -3.244167</point>
+		  <point>39.433889 -3.290278</point>
+		  <point>39.433889 -3.348333</point>
+		  <point>39.488056 -3.348889</point>
+	 </polygon>
+	 
+	  <polygon name="PARQUE NATURAL DE LA MONTAÑA DE MONTSERRAT" type="points">
+	      <point>41.631944 1.801111</point>
+		  <point>41.620000 1.764167</point>
+		  <point>41.594444 1.768333</point>
+		  <point>41.570278 1.827222</point>
+		  <point>41.573889 1.859722</point>
+		  <point>41.603611 1.851389</point>
+		  <point>41.613333 1.838056</point>
+		  <point>41.621944 1.841667</point>
+	 </polygon>
+ 
+	 
+   </polygons>
+
+</prohibited-areas>

@@ -41,7 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CSVWriter.cs" />
+    <Compile Include="OperationWriter.cs" />
     <Compile Include="MavLink\MavLinkWriter.cs" />
     <Compile Include="Operation.cs" />
     <Compile Include="OperationGenerator.cs" />
