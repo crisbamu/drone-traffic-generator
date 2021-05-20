@@ -110,6 +110,7 @@ namespace utm_analysis
 
         /* function by CBM:
         *      calculate conflicts using RTCA formulas
+        *      AQUI strating point to call when C=1 and GetRoute tenga tiempos
         */
         public static List<Conflict> FindRTCAConflicts(List<Operator> operatorlist)
         {
@@ -334,10 +335,14 @@ namespace utm_analysis
             // check the intersection
             if(first_intersection_distance<=first_distance && second_intersection_distance<=second_distance)
             {
-                conflict = true;
+               
                 double min_dist = CalculateMinDist(FirstPoint, SecondPoint, first_distance, first_intersection_distance, 
                                                      ThirdPoint, FourthPoint, second_distance, second_intersection_distance);
-                conflict_info.SetCpa (intersection_point, min_dist);
+                if (min_dist <= MAX_SAFE_DISTANCE && alt1to3 < MAX_SAFE_ALT)
+                {
+                    conflict = true;
+                    conflict_info.SetCpa(intersection_point, min_dist);
+                }
             }
 
             return new Tuple<bool, Conflict>(conflict, conflict_info);
