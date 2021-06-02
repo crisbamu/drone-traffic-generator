@@ -299,7 +299,7 @@ namespace utm_routes.DeliveryRoutes
 
             // 20 secs hover are 3 more points
             Point hover = delivery.Last();
-            for (int h = 1; h < 3; h++)
+            for (int h = 0; h < 4; h++)
             {
                 Point new_hover = hover.GetCopy();
                 new_hover.SetAltitude(delivery_alt);
@@ -307,9 +307,12 @@ namespace utm_routes.DeliveryRoutes
                 new_hover.SetTime(day + daytime);
                 delivery.Add(new_hover);
             }
-            delivery.AddRange(MakeAscension(delivery.Last(), deliveryroute.GetAircraft(), delivery_alt, deliveryroute.GetAltitude()));
+
+            Point last_hover = delivery.Last();
+            delivery.Remove(last_hover); // to avoid the repetition of the last hover point that Ascension adds
+            delivery.AddRange(MakeAscension(last_hover, deliveryroute.GetAircraft(), delivery_alt, deliveryroute.GetAltitude()));
             discretizedroute.AddRange(delivery);
-            daytime = daytime + TimeSpan.FromSeconds(5.0);
+            daytime = delivery.Last().GetTime().TimeOfDay;
 
             // way backwards
             for (int i = 0; i < backroute.Count - 2; i++)
