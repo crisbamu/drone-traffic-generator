@@ -281,7 +281,7 @@ namespace MartorellConsoleApp
             Console.WriteLine("DONE");
 
 
-            Console.ReadKey();
+            //Console.ReadKey();
         }
     }
 }
